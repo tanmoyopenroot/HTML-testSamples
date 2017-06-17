@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="assets\css\bootstrap\bootstrap.min.css">
+	<style type="text/css" media="screen">
+		div{
+			background-color: #4ECE77;
+			padding: 10px 0px;
+		}
+		.menu-wrapper{
+			position: relative;
+		}
+		svg{
+			fill: none;
+			stroke: #fff;
+			stroke-width: 5px;
+			stroke-linecap: round;
+		    stroke-linejoin: round;			
+		}
+		.menu-icon-trigger{
+			position: absolute;
+			top: 50px;
+			left: 35px;
+			height: 20px;
+			width: 30px;
+			opacity: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="menu-wrapper">
+			<svg width="100px" height="100px">
+			        <path class="path" id="path-A" d="M 30 40 L 70 40 C 90 40 90 75 60 85 A 40 40 0 0 1 20 20 L 80 80"/>
+			        <path class="path" id="path-B" d="M 30 50 L 70 50"/>
+			        <path class="path" id="path-C" d="M 70 60 L 30 60 C 10 60 10 20 40 15 A 40 38 0 1 1 20 80 L 80 20"/>
+			</svg>
+			<!-- Trigger to perform the animations -->
+			<button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+		</div>	
+	</div>
+	<script type="text/javascript" src="assets\js\jquery\jquery.js"></script>
+	<script src="assets/js/segment/segment.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://d3js.org/d3-ease.v1.min.js"></script>
+	<!-- <script src="assets/js/d3Ease/d3-ease.v0.6.js" type="text/javascript" charset="utf-8"></script> -->
+	<script type="text/javascript">
+		window.onload = function(){
+			var path_A = document.getElementById("path-A");
+			var path_B = document.getElementById("path-B");
+			var path_C = document.getElementById("path-C");
+
+			segment_A = new Segment(path_A, 8, 32);
+			segment_B = new Segment(path_B, 8, 32);
+			segment_C = new Segment(path_C, 8, 32);
+
+			// segment_A.draw("0%","13.7%",1,{easing: d3.easeElasticOut});
+			// segment_C.draw("0%","11.3%",1,{easing: d3.easeElasticOut});
+
+
+			function inAC(s) { s.draw('70%', '75%', 0.3, {delay: 0.1, callback: function(){ inAC2(s) }}); }
+			function inAC2(s) { s.draw('100% - 56.5', '100% - 30.5', 0.6, {easing: d3.easeElasticOut}); }
+			function inB(s) {s.draw("50%","50%",0.5,{easing: d3.easeBounce});}
+
+
+			function outAC(s) { s.draw('90% - 24', '90%', 0.1, {easing: d3.easeElasticIn, callback: function(){ outAC2(s) }}); }
+			function outAC2(s) { s.draw('20% - 24', '20%', 0.3, {callback: function(){ outAC3(s) }}); }
+			function outAC3(s) { s.draw(8, 32, 0.7, {easing: d3.easeElasticOut}); }
+			function outB(s) { s.draw(8, 32, 0.7, {delay: 0.1, easing: d3.easeElasticOut}); }
+
+			var	toClose = true;
+            $("#menu-icon-trigger").on("click",function(){
+				if(toClose){
+					console.log("Opening");
+					inAC(segment_A);
+					inAC(segment_C);
+					inB(segment_B);						
+				}
+				else{
+					console.log("Closing");
+					outAC(segment_A);
+					outB(segment_B);
+					outAC(segment_C);			
+				}
+				toClose = !toClose;
+			});
+		}
+	</script>
+</body>
+</html>

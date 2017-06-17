@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="assets\css\bootstrap\bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <style type="text/css" media="screen">
+    html,
+    body {
+        font-family: 'Open Sans', sans-serif;
+        width: 100%;
+        height: 100%;
+    }
+    
+    a,
+    a:hover,
+    a:active {
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .little-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(153, 204, 51, 0.9);
+        background: transparent;
+        visibility: hidden;
+        -webkit-transition: visibility 0s 0.8s;
+        transition: visibility 0s 0.8s;
+    }
+    
+    .overlay-boxes {
+        background: transparent;
+        visibility: hidden;
+        -webkit-transition: visibility 0s 0.8s;
+        transition: visibility 0s 0.8s;
+    }
+    
+    .overlay-boxes.open {
+        visibility: visible;
+        -webkit-transition: none;
+        transition: none;
+    }
+    
+    .overlay-boxes svg {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    
+    .overlay-boxes svg path {
+        fill: #999;
+        display: none;
+    }
+    
+    .overlay-boxes nav {
+        position: absolute;
+        top: 0;
+        left: 0%;
+        width: 100%;
+        height: 500px;
+    }
+
+    .overlay-boxes nav li {
+	    background: #fff;
+	    padding: 5px;
+	    border: 0;
+	    color: #7d97ad;
+	    margin: 0 5px 5px 0;
+	    outline: 0;
+	    transition: color .3s ease, background .3s ease, box-shadow .3s ease;
+	    box-shadow: 0 0.3125em 1.25em 0 rgba(46, 61, 73, .12);
+	    -moz-box-shadow: 0 .3125em 1.25em 0 rgba(46, 61, 73, .12);
+	    -webkit-box-shadow: 0 0.3125em 1.25em 0 rgba(46, 61, 73, .12);
+	}
+    .overlay-boxes nav a{
+    	color: #197;
+    }
+    
+    .overlay-boxes nav .fa-industry:before, .overlay-boxes nav .fa-gear:before {
+	    color: #197;
+	    padding: 0px 6px;
+	}
+    .overlay-boxes nav,
+    .overlay-boxes .overlay-close {
+        opacity: 0;
+        -webkit-transition: opacity 0.5s 0.8s;
+        transition: opacity 0.5s 0.8s;
+    }
+    
+    .overlay-boxes.open nav,
+    .overlay-boxes.open .overlay-close {
+        opacity: 1;
+        -webkit-transition-delay: 0.8s;
+        transition-delay: 0.8s;
+    }
+    
+    .overlay-boxes.close nav,
+    .overlay-boxes.close .overlay-close {
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="little-container">
+        <ul class="list-unstyled">
+            <li><a href="#">cat level 1 at left side</a></li>
+            <li><a href="#">cat level 1 at left side</a></li>
+            <li><a href="#">cat level 1 at left side</a></li>
+            <li><a href="#">cat level 1 at left side</a></li>
+            <li><a href="#">cat level 1 at left side</a></li>
+        </ul>
+    </div>
+    <div class="overlay overlay-boxes">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="101%" viewBox="0 0 1440 806" preserveAspectRatio="none">
+            <path id="1" d="m0.005959,200.364029l207.551124,0l0,204.342453l-207.551124,0l0,-204.342453z" />
+            <path id="2" d="m0.005959,400.45401l207.551124,0l0,204.342499l-207.551124,0l0,-204.342499z" />
+            <path id="3" d="m0.005959,600.544067l207.551124,0l0,204.342468l-207.551124,0l0,-204.342468z" />
+            <path id="4" d="m205.752151,-0.36l207.551163,0l0,204.342437l-207.551163,0l0,-204.342437z" />
+            <path id="5" d="m204.744629,200.364029l207.551147,0l0,204.342453l-207.551147,0l0,-204.342453z" />
+            <path id="6" d="m204.744629,400.45401l207.551147,0l0,204.342499l-207.551147,0l0,-204.342499z" />
+            <path id="7" d="m204.744629,600.544067l207.551147,0l0,204.342468l-207.551147,0l0,-204.342468z" />
+            <path id="8" d="m410.416046,-0.36l207.551117,0l0,204.342437l-207.551117,0l0,-204.342437z" />
+            <path id="9" d="m410.416046,200.364029l207.551117,0l0,204.342453l-207.551117,0l0,-204.342453z" />
+            <path id="10" d="m410.416046,400.45401l207.551117,0l0,204.342499l-207.551117,0l0,-204.342499z" />
+            <path id="11" d="m410.416046,600.544067l207.551117,0l0,204.342468l-207.551117,0l0,-204.342468z" />
+            <path id="12" d="m616.087402,-0.36l207.551086,0l0,204.342437l-207.551086,0l0,-204.342437z" />
+            <path id="13" d="m616.087402,200.364029l207.551086,0l0,204.342453l-207.551086,0l0,-204.342453z" />
+            <path id="14" d="m616.087402,400.45401l207.551086,0l0,204.342499l-207.551086,0l0,-204.342499z" />
+            <path id="15" d="m616.087402,600.544067l207.551086,0l0,204.342468l-207.551086,0l0,-204.342468z" />
+            <path id="16" d="m821.748718,-0.36l207.550964,0l0,204.342437l-207.550964,0l0,-204.342437z" />
+            <path id="17" d="m821.748718,200.364029l207.550964,0l0,204.342453l-207.550964,0l0,-204.342453z" />
+            <path id="18" d="m821.748718,400.45401l207.550964,0l0,204.342499l-207.550964,0l0,-204.342499z" />
+            <path id="19" d="m821.748718,600.544067l207.550964,0l0,204.342468l-207.550964,0l0,-204.342468z" />
+            <path id="20" d="m1027.203979,-0.36l207.550903,0l0,204.342437l-207.550903,0l0,-204.342437z" />
+            <path id="21" d="m1027.203979,200.364029l207.550903,0l0,204.342453l-207.550903,0l0,-204.342453z" />
+            <path id="22" d="m1027.203979,400.45401l207.550903,0l0,204.342499l-207.550903,0l0,-204.342499z" />
+            <path id="23" d="m1027.203979,600.544067l207.550903,0l0,204.342468l-207.550903,0l0,-204.342468z" />
+            <path id="24" d="m1232.659302,-0.36l207.551147,0l0,204.342437l-207.551147,0l0,-204.342437z" />
+            <path id="25" d="m1232.659302,200.364029l207.551147,0l0,204.342453l-207.551147,0l0,-204.342453z" />
+            <path id="26" d="m1232.659302,400.45401l207.551147,0l0,204.342499l-207.551147,0l0,-204.342499z" />
+            <path id="27" d="m1232.659302,600.544067l207.551147,0l0,204.342468l-207.551147,0l0,-204.342468z" />
+            <path id="28" d="m-0.791443,-0.360001l207.551163,0l0,204.342438l-207.551163,0l0,-204.342438z" />
+        </svg>
+        <nav>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        </ul>
+                        <ul class="sublevel list-inline">
+                            <li><i class="fa fa-gear"></i><a href="" title="">Automobile, Aerospace, Marine & Defense</a></li>
+                            <li><i class="fa fa-industry"></i><a href="" title="">Industrial Raw Materials, Machinery & Supply</a></li>
+                            <li><i class="fa fa-gear"></i><a href="" title="">Industrial Products, Machines & Components</a></li>
+                            <li><i class="fa fa-industry"></i><a href="" title="">Agriculture, Farming, Agrotech & Food</a></li>
+                            <li><i class="fa fa-gear"></i><a href="" title="">Medical, Pharma, BioTech & Healthcare</a></li>
+                            <li><i class="fa fa-industry"></i><a href="" title="">Power, Energy, Renewable Energy</a></li>
+                            <li><i class="fa fa-gear"></i><a href="" title="">IT / Software, Web, Mobile & Networking</a></li>
+                            <li><i class="fa fa-industry"></i><a href="" title="">R&D, Consultancy & Industrial Services</a></li>
+                            <li><i class="fa fa-gear"></i><a href="" title="">Textiles, Fabric, Fashion & Apparels</a></li>
+                            <li><i class="fa fa-industry"></i><a href="" title="">Handicraft, Decoratives, Gifts & Toys</a></li>
+                            </ul>
+                    </div>
+                    <div class="col-sm-6">
+                        <ul class="sublevel list-unstyled">
+                            <li><i class="fa fa-gear"></i><a href="" title="">Chemicals, Metals, Plastics & Polymers</a></li>
+                            <li><i class="fa fa-industry"></i><a href="" title="">Home, Office, kitchen & Interior Items</a></li>
+                            <li><i class="fa fa-gear"></i><a href="" title="">Electrical & Electronics Industry</a></li>
+                            <li><i class="fa fa-industry"></i><a href="" title="">Travel, Tourism, Leisure & Hospitality</a></li>
+                            <li><i class="fa fa-gear"></i><a href="" title="">Packaging, Transportation & Logistics</a></li>
+                            <li><i class="fa fa-industry"></i><a href="" title="">Furniture, Construction & Real Estate</a></li>
+                            <li><i class="fa fa-gear"></i><a href="" title="">Education, Training & EdTech</a></li>
+                            <li><i class="fa fa-industry"></i><a href="" title="">Legal, Financial, Accounting</a></li>
+                            <li><i class="fa fa-gear"></i><a href="" title="">Sales, Marketing & Business Services</a></li>
+                            <li><i class="fa fa-industry"></i><a href="" title="">Sports, Fitness & Entertainment</a></li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <script type="text/javascript" src="assets\js\jquery\jquery.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var paths = document.querySelectorAll('svg > path'),
+            arrayPaths,
+            pathsTotal = paths.length;
+
+        function shuffle(arrayPaths) {
+            var currPath = pathsTotal,
+                temp,
+                randomIndex;
+
+            // console.log(pathsTotal);
+            while (currPath != 0) {
+                randomIndex = Math.floor(Math.random() * currPath);
+                // console.log(randomIndex);
+                currPath -= 1;
+                temp = arrayPaths[randomIndex];
+                console.log(temp);
+                arrayPaths[randomIndex] = arrayPaths[currPath];
+                arrayPaths[currPath] = temp;
+            }
+
+            // $('.overlay-boxes').addClass('close');
+            return arrayPaths;
+
+        }
+
+        $('.little-container .list-unstyled li').each(function(index, el) {
+            $(this).on('click', function(event) {
+	                var currPath = 0;
+                arrayPaths = shuffle(paths);
+                console.log("Inside");
+                // setTimeout(function(){
+                $('.overlay-boxes').removeClass('close').addClass('open');
+                // arrayPaths.forEach(function(el, index) {
+                    // console.log(el);
+                    // setTimeout(function() {
+                    //     el.style.display = "block";
+                    // }, index * 30);
+                    // currPath++;
+                // });
+
+                // for (var i = 0; i < arrayPaths.length; i++) {
+                	// setTimeout(function() {
+                	    // arrayPaths[i].style.display = "block";
+                	    
+                	// }, index * 30);
+                }
+                // }, 500);
+            });
+        });
+
+
+        // $('').on('click', function(event) {
+        //     if ($('.overlay-boxes').hasClass('open')) {
+        //         $('.overlay-boxes').removeClass('open').addClass('close');
+        //         paths.forEach(function(index, el) {
+        //             setTimeout(function() {
+        //                 $(this).css({
+        //                     display: 'none',
+        //                 });
+        //             }, index * 30);
+        //         });
+        //     }
+        // });
+    })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="assets\css\bootstrap\bootstrap.min.css">
+	<style type="text/css" media="screen">
+		html,body{
+			height: 100%;
+			width: 100%;			
+		}
+
+		.input-container{
+			position: relative;
+			height: 100%;
+			width: 100%;
+		}
+
+		#input-btn{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: #333;
+			width: 280px;
+			height: 38px;
+			font-size: 18px;
+		}
+	</style>
+</head>
+<body>
+	<div class="input-container">
+		<div class="container">
+			<input type="" name="" id="input-btn" placeholder="Fill In With Text">
+		</div>
+	</div>
+	<script type="text/javascript">
+		function Resizer(ele){
+			var currFontSize = parseInt(window.getComputedStyle(ele).getPropertyValue("font-size")),fontFamily = window.getComputedStyle(ele).getPropertyValue("font-family"),
+				inputWidth = parseInt(window.getComputedStyle(ele).getPropertyValue("width")),
+				minFontSize = 11,
+				maxFontSize = currFontSize,
+				inputValue,
+				canvas = document.createElement('canvas'),
+				ctx = canvas.getContext('2d');
+
+			// console.log(ele.value);		
+			// console.log(currFontSize);
+			// console.log(inputWidth);
+
+			function UpdateFont(){
+				inputValue = ele.value;
+				width = getCanvasWidth(inputValue, currFontSize);
+				if(width < inputWidth && currFontSize < maxFontSize ){
+					currFontSize += 1;
+					ele.style.fontSize = currFontSize + 'px';
+				}
+				else if(width > inputWidth && currFontSize > minFontSize){
+					currFontSize -= 1;
+					ele.style.fontSize = currFontSize + 'px';
+				}
+
+			}
+
+			function getCanvasWidth(text, size){
+				ctx.font = size + "px" + fontFamily;
+					// console.log(text);
+				if(ctx.fillText){
+					// console.log(ctx.measureText(text).width);
+					return ctx.measureText(text).width;
+				}
+			}
+
+			function init() {
+				ele.oninput = UpdateFont;
+			}
+
+
+			init();
+		}
+
+		Resizer(document.getElementById('input-btn'));
+
+	</script>	
+</body>
+</html>

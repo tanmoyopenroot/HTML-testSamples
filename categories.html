@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="assets\css\bootstrap\bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <style type="text/css" media="screen">
+    html,
+    body {
+        font-family: 'Open Sans', sans-serif;
+    }
+    
+    a,
+    a:hover,
+    a:active {
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .cat-container .cat-card {
+        position: relative;
+        background: #fff;
+        padding: 3.85em 4.375em 6em 7.5em;
+        box-shadow: 0 0.3125em 1.25em 0 rgba(46, 61, 73, .12);
+        margin-bottom: 2.5em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .cat-container .cat-card p {
+        font-size: 12px;
+    }
+    
+    .cat-container .cat-card:hover {
+        /* box-shadow:2px 4px 8px 0px rgba(46,61,73,0.2); */
+    }
+    
+    .cat-container .cat-card .cat-logo {
+        color: #fff;
+        display: block;
+        position: absolute;
+        background-color: #337ab7;
+        top: 1.875em;
+        left: -.625em;
+        width: 6.25em;
+        height: 6.25em;
+    }
+
+    .cat-container .even .cat-logo {
+        background-color: #197;
+    }
+
+    .cat-container .cat-logo .fa{
+    	position: absolute;
+    	top: 50%;
+    	left: 50%;
+    	transform: translate(-50%, -50%);
+    }
+    
+    .cat-container .cat-card .cat-panel {
+        display: none;
+        /* height: 0px; */
+    }
+    .cat-container .cat-card .cat-panel li {
+        background: #fff;
+        padding: 5px;
+        border: 0;
+        color: #7d97ad;
+        margin: 0 5px 5px 0;
+        outline: 0;
+        transition: color .3s ease, background .3s ease, box-shadow .3s ease;
+        box-shadow: 0 0.3125em 1.25em 0 rgba(46, 61, 73, .12);
+        -moz-box-shadow: 0 .3125em 1.25em 0 rgba(46, 61, 73, .12);
+        -webkit-box-shadow: 0 0.3125em 1.25em 0 rgba(46, 61, 73, .12);
+    }
+    
+    .cat-container .even .cat-panel a {
+        color: #197;
+    }
+    
+    .cat-container .card-link {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #fafbfc;
+        color: #337ab7;
+        text-transform: uppercase;
+        width: 100%;
+        text-align: center;
+        font-size: 10px;
+        letter-spacing: 1px;
+        text-shadow: none;
+        padding: 20px 0px;
+    }
+
+    .cat-container .even .card-link{
+    	color: #197;
+    }
+    
+    .cat-container .card-link .send {
+        position: absolute;
+        top: -22px;
+        right: 16px;
+        height: 40px;
+        width: 40px;
+        background-color: #337ab7;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 1s ease;
+        transition-delay: 0.3s;
+    }
+    
+    .fa-minus:before,
+    .fa-plus:before {
+        color: #fff;
+        position: absolute;
+        top: 11px;
+        left: 12px;
+    }
+    
+    .cat-container .even .card-link .send {
+        background-color: #197;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="cat-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="cat-card">
+                    	<div class="cat-logo">
+                    		<i class="fa fa-gear fa-2x"></i>
+                    	</div>
+                        <div class="card-content">
+                            <h3>Automobile, Aerospace, Marine & Defense</h3>
+                            <p>Learn to clean up messy data, uncover patterns and insights, make predictions using machine learning, and clearly communicate critical findings.</p>
+                        </div>
+                        <div class="cat-panel">
+                            <ul class="list-inline">
+                                <li><a class="" href="">Wheel Assembly Parts</a>
+                                </li>
+                                <li><a class="" href="">Chassis, Suspension &amp; Steering Parts</a>
+                                </li>
+                                <li><a class="" href="">Powertrain Parts, Gears</a>
+                                </li>
+                                <li><a class="" href="">Brake Components</a>
+                                </li>
+                                <li><a class="" href="">Cars &amp; Bike Accessories</a>
+                                </li>
+                                <li><a class="" href="">Safety Equipment</a>
+                                </li>
+                                <li><a class="" href="">Fasteners, Nuts Bolts, Rivets, Clamps</a>
+                                </li>
+                                <li><a class="" href="">Engine Components &amp; Assembly</a>
+                                </li>
+                                <li><a class="" href="">OEM Parts</a>
+                                </li>
+                                <li><a class="" href="">Joints, Shafts, Couplings</a>
+                                </li>
+                                <li><a class="" href="">Bearing, Bushes &amp; Related Items</a>
+                                </li>
+                                <li><a class="" href="">Sheet Metal Components</a>
+                                </li>
+                                <li><a class="" href="">Plastics &amp; Polymer Components</a>
+                                </li>
+                                <li><a class="" href="">Lights &amp; Electricals</a>
+                                </li>
+                                <li><a class="" href="">Motors &amp; Generators &amp; Parts</a>
+                                </li>
+                                <li><a class="" href="">Racing Items for Baja Supra &amp; Gokart</a>
+                                </li>
+                                <li><a class="" href="">Marine Items</a>
+                                </li>
+                                <li><a class="" href="">Aerospace parts</a>
+                                </li>
+                                <li><a class="" href="">Safety Equipments</a>
+                                </li>
+                                <li><a class="" href="">Lubricants &amp; Coolants</a>
+                                </li>
+                                <li><a class="" href="">Railway Items</a>
+                                </li>
+                                <li><a class="" href="">ATV, Snowmoblies, Parts &amp; Accessories</a>
+                                </li>
+                                <li><a class="" href="">Bike &amp; Car spares</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-link" href="" title="">
+                            <div class="send">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
+                            <span>Explore Our Content</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="cat-card even">
+                    	<div class="cat-logo">
+                    		<i class="fa fa-industry fa-2x"></i>
+                    	</div>
+                        <div class="card-content">
+                            <h3>Industrial Raw Materials, Machinery & Supply </h3>
+                            <p>Learn to clean up messy data, uncover patterns and insights, make predictions using machine learning, and clearly communicate critical findings.</p>
+                        </div>
+                        <div class="cat-panel">
+                            <ul class="list-inline">
+                                <li><a href="">Plastics &amp; Polymer Components</a>
+                                </li>
+                                <li><a href="">Safety Equipments</a>
+                                </li>
+                                <li><a href="">Lubricants &amp; Coolants</a>
+                                </li>
+                                <li><a href="">Jigs &amp; Fixtures</a>
+                                </li>
+                                <li><a href="">Industrial Chemicals</a>
+                                </li>
+                                <li><a href="">Sheet Metal Parts</a>
+                                </li>
+                                <li><a href="">Industrial Fuel</a>
+                                </li>
+                                <li><a href="">Cutting, Grinding tools</a>
+                                </li>
+                                <li><a href="">Hand Tools</a>
+                                </li>
+                                <li><a href="">CNC Machines</a>
+                                </li>
+                                <li><a href="">Machine Tools</a>
+                                </li>
+                                <li><a href="">Power Tools</a>
+                                </li>
+                                <li><a href="">Welding setup &amp; Electrodes</a>
+                                </li>
+                                <li><a href="">Adhesive &amp; Sealants</a>
+                                </li>
+                                <li><a href="">Mineral &amp; Ores</a>
+                                </li>
+                                <li><a href="">Paint, Pigments, Dyes &amp; Coatings</a>
+                                </li>
+                                <li><a href="">Packing &amp; Shopping Bags</a>
+                                </li>
+                                <li><a href="">Safety Wear Clothing</a>
+                                </li>
+                                <li><a href="">Material Handling Equipments &amp; Setup</a>
+                                </li>
+                                <li><a href="">Fasteners, Screws, Nuts &amp; Bolts, Rivets</a>
+                                </li>
+                                <li><a href="">Packaging Machines</a>
+                                </li>
+                                <li><a href="">Filling Plant &amp; Setup</a>
+                                </li>
+                                <li><a href="">Plastic Molding &amp; Processing Machine</a>
+                                </li>
+                                <li><a href="">Heavy Machines</a>
+                                </li>
+                                <li><a href="">Furnace &amp; Ovens</a>
+                                </li>
+                                <li><a href="">Industrial Robots</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-link" href="" title="">
+                            <div class="send">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
+                            <span>Explore Our Content</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="cat-card">
+                    	<div class="cat-logo">
+                    		<i class="fa fa-gear fa-2x"></i>
+                    	</div>
+                        <div class="card-content">
+                            <h3>Automobile, Aerospace, Marine & Defense</h3>
+                            <p>Learn to clean up messy data, uncover patterns and insights, make predictions using machine learning, and clearly communicate critical findings.</p>
+                        </div>
+                        <div class="cat-panel">
+                            <ul class="list-inline">
+                                <li><a class="" href="">Wheel Assembly Parts</a>
+                                </li>
+                                <li><a class="" href="">Chassis, Suspension &amp; Steering Parts</a>
+                                </li>
+                                <li><a class="" href="">Powertrain Parts, Gears</a>
+                                </li>
+                                <li><a class="" href="">Brake Components</a>
+                                </li>
+                                <li><a class="" href="">Cars &amp; Bike Accessories</a>
+                                </li>
+                                <li><a class="" href="">Safety Equipment</a>
+                                </li>
+                                <li><a class="" href="">Fasteners, Nuts Bolts, Rivets, Clamps</a>
+                                </li>
+                                <li><a class="" href="">Engine Components &amp; Assembly</a>
+                                </li>
+                                <li><a class="" href="">OEM Parts</a>
+                                </li>
+                                <li><a class="" href="">Joints, Shafts, Couplings</a>
+                                </li>
+                                <li><a class="" href="">Bearing, Bushes &amp; Related Items</a>
+                                </li>
+                                <li><a class="" href="">Sheet Metal Components</a>
+                                </li>
+                                <li><a class="" href="">Plastics &amp; Polymer Components</a>
+                                </li>
+                                <li><a class="" href="">Lights &amp; Electricals</a>
+                                </li>
+                                <li><a class="" href="">Motors &amp; Generators &amp; Parts</a>
+                                </li>
+                                <li><a class="" href="">Racing Items for Baja Supra &amp; Gokart</a>
+                                </li>
+                                <li><a class="" href="">Marine Items</a>
+                                </li>
+                                <li><a class="" href="">Aerospace parts</a>
+                                </li>
+                                <li><a class="" href="">Safety Equipments</a>
+                                </li>
+                                <li><a class="" href="">Lubricants &amp; Coolants</a>
+                                </li>
+                                <li><a class="" href="">Railway Items</a>
+                                </li>
+                                <li><a class="" href="">ATV, Snowmoblies, Parts &amp; Accessories</a>
+                                </li>
+                                <li><a class="" href="">Bike &amp; Car spares</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-link" href="" title="">
+                            <div class="send">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
+                            <span>Explore Our Content</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="cat-card even">
+                    	<div class="cat-logo">
+                    		<i class="fa fa-industry fa-2x"></i>
+                    	</div>
+                        <div class="card-content">
+                            <h3>Industrial Raw Materials, Machinery & Supply </h3>
+                            <p>Learn to clean up messy data, uncover patterns and insights, make predictions using machine learning, and clearly communicate critical findings.</p>
+                        </div>
+                        <div class="cat-panel">
+                            <ul class="list-inline">
+                                <li><a href="">Plastics &amp; Polymer Components</a>
+                                </li>
+                                <li><a href="">Safety Equipments</a>
+                                </li>
+                                <li><a href="">Lubricants &amp; Coolants</a>
+                                </li>
+                                <li><a href="">Jigs &amp; Fixtures</a>
+                                </li>
+                                <li><a href="">Industrial Chemicals</a>
+                                </li>
+                                <li><a href="">Sheet Metal Parts</a>
+                                </li>
+                                <li><a href="">Industrial Fuel</a>
+                                </li>
+                                <li><a href="">Cutting, Grinding tools</a>
+                                </li>
+                                <li><a href="">Hand Tools</a>
+                                </li>
+                                <li><a href="">CNC Machines</a>
+                                </li>
+                                <li><a href="">Machine Tools</a>
+                                </li>
+                                <li><a href="">Power Tools</a>
+                                </li>
+                                <li><a href="">Welding setup &amp; Electrodes</a>
+                                </li>
+                                <li><a href="">Adhesive &amp; Sealants</a>
+                                </li>
+                                <li><a href="">Mineral &amp; Ores</a>
+                                </li>
+                                <li><a href="">Paint, Pigments, Dyes &amp; Coatings</a>
+                                </li>
+                                <li><a href="">Packing &amp; Shopping Bags</a>
+                                </li>
+                                <li><a href="">Safety Wear Clothing</a>
+                                </li>
+                                <li><a href="">Material Handling Equipments &amp; Setup</a>
+                                </li>
+                                <li><a href="">Fasteners, Screws, Nuts &amp; Bolts, Rivets</a>
+                                </li>
+                                <li><a href="">Packaging Machines</a>
+                                </li>
+                                <li><a href="">Filling Plant &amp; Setup</a>
+                                </li>
+                                <li><a href="">Plastic Molding &amp; Processing Machine</a>
+                                </li>
+                                <li><a href="">Heavy Machines</a>
+                                </li>
+                                <li><a href="">Furnace &amp; Ovens</a>
+                                </li>
+                                <li><a href="">Industrial Robots</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-link" href="" title="">
+                            <div class="send">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
+                            <span>Explore Our Content</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="cat-card">
+                    	<div class="cat-logo">
+                    		<i class="fa fa-gear fa-2x"></i>
+                    	</div>
+                        <div class="card-content">
+                            <h3>Automobile, Aerospace, Marine & Defense</h3>
+                            <p>Learn to clean up messy data, uncover patterns and insights, make predictions using machine learning, and clearly communicate critical findings.</p>
+                        </div>
+                        <div class="cat-panel">
+                            <ul class="list-inline">
+                                <li><a class="" href="">Wheel Assembly Parts</a>
+                                </li>
+                                <li><a class="" href="">Chassis, Suspension &amp; Steering Parts</a>
+                                </li>
+                                <li><a class="" href="">Powertrain Parts, Gears</a>
+                                </li>
+                                <li><a class="" href="">Brake Components</a>
+                                </li>
+                                <li><a class="" href="">Cars &amp; Bike Accessories</a>
+                                </li>
+                                <li><a class="" href="">Safety Equipment</a>
+                                </li>
+                                <li><a class="" href="">Fasteners, Nuts Bolts, Rivets, Clamps</a>
+                                </li>
+                                <li><a class="" href="">Engine Components &amp; Assembly</a>
+                                </li>
+                                <li><a class="" href="">OEM Parts</a>
+                                </li>
+                                <li><a class="" href="">Joints, Shafts, Couplings</a>
+                                </li>
+                                <li><a class="" href="">Bearing, Bushes &amp; Related Items</a>
+                                </li>
+                                <li><a class="" href="">Sheet Metal Components</a>
+                                </li>
+                                <li><a class="" href="">Plastics &amp; Polymer Components</a>
+                                </li>
+                                <li><a class="" href="">Lights &amp; Electricals</a>
+                                </li>
+                                <li><a class="" href="">Motors &amp; Generators &amp; Parts</a>
+                                </li>
+                                <li><a class="" href="">Racing Items for Baja Supra &amp; Gokart</a>
+                                </li>
+                                <li><a class="" href="">Marine Items</a>
+                                </li>
+                                <li><a class="" href="">Aerospace parts</a>
+                                </li>
+                                <li><a class="" href="">Safety Equipments</a>
+                                </li>
+                                <li><a class="" href="">Lubricants &amp; Coolants</a>
+                                </li>
+                                <li><a class="" href="">Railway Items</a>
+                                </li>
+                                <li><a class="" href="">ATV, Snowmoblies, Parts &amp; Accessories</a>
+                                </li>
+                                <li><a class="" href="">Bike &amp; Car spares</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-link" href="" title="">
+                            <div class="send">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
+                            <span>Explore Our Content</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="cat-card even">
+                    	<div class="cat-logo">
+                    		<i class="fa fa-industry fa-2x"></i>
+                    	</div>
+                        <div class="card-content">
+                            <h3>Industrial Raw Materials, Machinery & Supply </h3>
+                            <p>Learn to clean up messy data, uncover patterns and insights, make predictions using machine learning, and clearly communicate critical findings.</p>
+                        </div>
+                        <div class="cat-panel">
+                            <ul class="list-inline">
+                                <li><a href="">Plastics &amp; Polymer Components</a>
+                                </li>
+                                <li><a href="">Safety Equipments</a>
+                                </li>
+                                <li><a href="">Lubricants &amp; Coolants</a>
+                                </li>
+                                <li><a href="">Jigs &amp; Fixtures</a>
+                                </li>
+                                <li><a href="">Industrial Chemicals</a>
+                                </li>
+                                <li><a href="">Sheet Metal Parts</a>
+                                </li>
+                                <li><a href="">Industrial Fuel</a>
+                                </li>
+                                <li><a href="">Cutting, Grinding tools</a>
+                                </li>
+                                <li><a href="">Hand Tools</a>
+                                </li>
+                                <li><a href="">CNC Machines</a>
+                                </li>
+                                <li><a href="">Machine Tools</a>
+                                </li>
+                                <li><a href="">Power Tools</a>
+                                </li>
+                                <li><a href="">Welding setup &amp; Electrodes</a>
+                                </li>
+                                <li><a href="">Adhesive &amp; Sealants</a>
+                                </li>
+                                <li><a href="">Mineral &amp; Ores</a>
+                                </li>
+                                <li><a href="">Paint, Pigments, Dyes &amp; Coatings</a>
+                                </li>
+                                <li><a href="">Packing &amp; Shopping Bags</a>
+                                </li>
+                                <li><a href="">Safety Wear Clothing</a>
+                                </li>
+                                <li><a href="">Material Handling Equipments &amp; Setup</a>
+                                </li>
+                                <li><a href="">Fasteners, Screws, Nuts &amp; Bolts, Rivets</a>
+                                </li>
+                                <li><a href="">Packaging Machines</a>
+                                </li>
+                                <li><a href="">Filling Plant &amp; Setup</a>
+                                </li>
+                                <li><a href="">Plastic Molding &amp; Processing Machine</a>
+                                </li>
+                                <li><a href="">Heavy Machines</a>
+                                </li>
+                                <li><a href="">Furnace &amp; Ovens</a>
+                                </li>
+                                <li><a href="">Industrial Robots</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-link" href="" title="">
+                            <div class="send">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
+                            <span>Explore Our Content</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="cat-card">
+                    	<div class="cat-logo">
+                    		<i class="fa fa-gear fa-2x"></i>
+                    	</div>
+                        <div class="card-content">
+                            <h3>Automobile, Aerospace, Marine & Defense</h3>
+                            <p>Learn to clean up messy data, uncover patterns and insights, make predictions using machine learning, and clearly communicate critical findings.</p>
+                        </div>
+                        <div class="cat-panel">
+                            <ul class="list-inline">
+                                <li><a class="" href="">Wheel Assembly Parts</a>
+                                </li>
+                                <li><a class="" href="">Chassis, Suspension &amp; Steering Parts</a>
+                                </li>
+                                <li><a class="" href="">Powertrain Parts, Gears</a>
+                                </li>
+                                <li><a class="" href="">Brake Components</a>
+                                </li>
+                                <li><a class="" href="">Cars &amp; Bike Accessories</a>
+                                </li>
+                                <li><a class="" href="">Safety Equipment</a>
+                                </li>
+                                <li><a class="" href="">Fasteners, Nuts Bolts, Rivets, Clamps</a>
+                                </li>
+                                <li><a class="" href="">Engine Components &amp; Assembly</a>
+                                </li>
+                                <li><a class="" href="">OEM Parts</a>
+                                </li>
+                                <li><a class="" href="">Joints, Shafts, Couplings</a>
+                                </li>
+                                <li><a class="" href="">Bearing, Bushes &amp; Related Items</a>
+                                </li>
+                                <li><a class="" href="">Sheet Metal Components</a>
+                                </li>
+                                <li><a class="" href="">Plastics &amp; Polymer Components</a>
+                                </li>
+                                <li><a class="" href="">Lights &amp; Electricals</a>
+                                </li>
+                                <li><a class="" href="">Motors &amp; Generators &amp; Parts</a>
+                                </li>
+                                <li><a class="" href="">Racing Items for Baja Supra &amp; Gokart</a>
+                                </li>
+                                <li><a class="" href="">Marine Items</a>
+                                </li>
+                                <li><a class="" href="">Aerospace parts</a>
+                                </li>
+                                <li><a class="" href="">Safety Equipments</a>
+                                </li>
+                                <li><a class="" href="">Lubricants &amp; Coolants</a>
+                                </li>
+                                <li><a class="" href="">Railway Items</a>
+                                </li>
+                                <li><a class="" href="">ATV, Snowmoblies, Parts &amp; Accessories</a>
+                                </li>
+                                <li><a class="" href="">Bike &amp; Car spares</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-link" href="" title="">
+                            <div class="send">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
+                            <span>Explore Our Content</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="cat-card even">
+                    	<div class="cat-logo">
+                    		<i class="fa fa-industry fa-2x"></i>
+                    	</div>
+                        <div class="card-content">
+                            <h3>Industrial Raw Materials, Machinery & Supply </h3>
+                            <p>Learn to clean up messy data, uncover patterns and insights, make predictions using machine learning, and clearly communicate critical findings.</p>
+                        </div>
+                        <div class="cat-panel">
+                            <ul class="list-inline">
+                                <li><a href="">Plastics &amp; Polymer Components</a>
+                                </li>
+                                <li><a href="">Safety Equipments</a>
+                                </li>
+                                <li><a href="">Lubricants &amp; Coolants</a>
+                                </li>
+                                <li><a href="">Jigs &amp; Fixtures</a>
+                                </li>
+                                <li><a href="">Industrial Chemicals</a>
+                                </li>
+                                <li><a href="">Sheet Metal Parts</a>
+                                </li>
+                                <li><a href="">Industrial Fuel</a>
+                                </li>
+                                <li><a href="">Cutting, Grinding tools</a>
+                                </li>
+                                <li><a href="">Hand Tools</a>
+                                </li>
+                                <li><a href="">CNC Machines</a>
+                                </li>
+                                <li><a href="">Machine Tools</a>
+                                </li>
+                                <li><a href="">Power Tools</a>
+                                </li>
+                                <li><a href="">Welding setup &amp; Electrodes</a>
+                                </li>
+                                <li><a href="">Adhesive &amp; Sealants</a>
+                                </li>
+                                <li><a href="">Mineral &amp; Ores</a>
+                                </li>
+                                <li><a href="">Paint, Pigments, Dyes &amp; Coatings</a>
+                                </li>
+                                <li><a href="">Packing &amp; Shopping Bags</a>
+                                </li>
+                                <li><a href="">Safety Wear Clothing</a>
+                                </li>
+                                <li><a href="">Material Handling Equipments &amp; Setup</a>
+                                </li>
+                                <li><a href="">Fasteners, Screws, Nuts &amp; Bolts, Rivets</a>
+                                </li>
+                                <li><a href="">Packaging Machines</a>
+                                </li>
+                                <li><a href="">Filling Plant &amp; Setup</a>
+                                </li>
+                                <li><a href="">Plastic Molding &amp; Processing Machine</a>
+                                </li>
+                                <li><a href="">Heavy Machines</a>
+                                </li>
+                                <li><a href="">Furnace &amp; Ovens</a>
+                                </li>
+                                <li><a href="">Industrial Robots</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-link" href="" title="">
+                            <div class="send">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
+                            <span>Explore Our Content</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="cat-card">
+                    	<div class="cat-logo">
+                    		<i class="fa fa-gear fa-2x"></i>
+                    	</div>
+                        <div class="card-content">
+                            <h3>Automobile, Aerospace, Marine & Defense</h3>
+                            <p>Learn to clean up messy data, uncover patterns and insights, make predictions using machine learning, and clearly communicate critical findings.</p>
+                        </div>
+                        <div class="cat-panel">
+                            <ul class="list-inline">
+                                <li><a class="" href="">Wheel Assembly Parts</a>
+                                </li>
+                                <li><a class="" href="">Chassis, Suspension &amp; Steering Parts</a>
+                                </li>
+                                <li><a class="" href="">Powertrain Parts, Gears</a>
+                                </li>
+                                <li><a class="" href="">Brake Components</a>
+                                </li>
+                                <li><a class="" href="">Cars &amp; Bike Accessories</a>
+                                </li>
+                                <li><a class="" href="">Safety Equipment</a>
+                                </li>
+                                <li><a class="" href="">Fasteners, Nuts Bolts, Rivets, Clamps</a>
+                                </li>
+                                <li><a class="" href="">Engine Components &amp; Assembly</a>
+                                </li>
+                                <li><a class="" href="">OEM Parts</a>
+                                </li>
+                                <li><a class="" href="">Joints, Shafts, Couplings</a>
+                                </li>
+                                <li><a class="" href="">Bearing, Bushes &amp; Related Items</a>
+                                </li>
+                                <li><a class="" href="">Sheet Metal Components</a>
+                                </li>
+                                <li><a class="" href="">Plastics &amp; Polymer Components</a>
+                                </li>
+                                <li><a class="" href="">Lights &amp; Electricals</a>
+                                </li>
+                                <li><a class="" href="">Motors &amp; Generators &amp; Parts</a>
+                                </li>
+                                <li><a class="" href="">Racing Items for Baja Supra &amp; Gokart</a>
+                                </li>
+                                <li><a class="" href="">Marine Items</a>
+                                </li>
+                                <li><a class="" href="">Aerospace parts</a>
+                                </li>
+                                <li><a class="" href="">Safety Equipments</a>
+                                </li>
+                                <li><a class="" href="">Lubricants &amp; Coolants</a>
+                                </li>
+                                <li><a class="" href="">Railway Items</a>
+                                </li>
+                                <li><a class="" href="">ATV, Snowmoblies, Parts &amp; Accessories</a>
+                                </li>
+                                <li><a class="" href="">Bike &amp; Car spares</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-link" href="" title="">
+                            <div class="send">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
+                            <span>Explore Our Content</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="cat-card even">
+                    	<div class="cat-logo">
+                    		<i class="fa fa-industry fa-2x"></i>
+                    	</div>
+                        <div class="card-content">
+                            <h3>Industrial Raw Materials, Machinery & Supply </h3>
+                            <p>Learn to clean up messy data, uncover patterns and insights, make predictions using machine learning, and clearly communicate critical findings.</p>
+                        </div>
+                        <div class="cat-panel">
+                            <ul class="list-inline">
+                                <li><a href="">Plastics &amp; Polymer Components</a>
+                                </li>
+                                <li><a href="">Safety Equipments</a>
+                                </li>
+                                <li><a href="">Lubricants &amp; Coolants</a>
+                                </li>
+                                <li><a href="">Jigs &amp; Fixtures</a>
+                                </li>
+                                <li><a href="">Industrial Chemicals</a>
+                                </li>
+                                <li><a href="">Sheet Metal Parts</a>
+                                </li>
+                                <li><a href="">Industrial Fuel</a>
+                                </li>
+                                <li><a href="">Cutting, Grinding tools</a>
+                                </li>
+                                <li><a href="">Hand Tools</a>
+                                </li>
+                                <li><a href="">CNC Machines</a>
+                                </li>
+                                <li><a href="">Machine Tools</a>
+                                </li>
+                                <li><a href="">Power Tools</a>
+                                </li>
+                                <li><a href="">Welding setup &amp; Electrodes</a>
+                                </li>
+                                <li><a href="">Adhesive &amp; Sealants</a>
+                                </li>
+                                <li><a href="">Mineral &amp; Ores</a>
+                                </li>
+                                <li><a href="">Paint, Pigments, Dyes &amp; Coatings</a>
+                                </li>
+                                <li><a href="">Packing &amp; Shopping Bags</a>
+                                </li>
+                                <li><a href="">Safety Wear Clothing</a>
+                                </li>
+                                <li><a href="">Material Handling Equipments &amp; Setup</a>
+                                </li>
+                                <li><a href="">Fasteners, Screws, Nuts &amp; Bolts, Rivets</a>
+                                </li>
+                                <li><a href="">Packaging Machines</a>
+                                </li>
+                                <li><a href="">Filling Plant &amp; Setup</a>
+                                </li>
+                                <li><a href="">Plastic Molding &amp; Processing Machine</a>
+                                </li>
+                                <li><a href="">Heavy Machines</a>
+                                </li>
+                                <li><a href="">Furnace &amp; Ovens</a>
+                                </li>
+                                <li><a href="">Industrial Robots</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-link" href="" title="">
+                            <div class="send">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
+                            <span>Explore Our Content</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="cat-card">
+                    	<div class="cat-logo">
+                    		<i class="fa fa-gear fa-2x"></i>
+                    	</div>
+                        <div class="card-content">
+                            <h3>Automobile, Aerospace, Marine & Defense</h3>
+                            <p>Learn to clean up messy data, uncover patterns and insights, make predictions using machine learning, and clearly communicate critical findings.</p>
+                        </div>
+                        <div class="cat-panel">
+                            <ul class="list-inline">
+                                <li><a class="" href="">Wheel Assembly Parts</a>
+                                </li>
+                                <li><a class="" href="">Chassis, Suspension &amp; Steering Parts</a>
+                                </li>
+                                <li><a class="" href="">Powertrain Parts, Gears</a>
+                                </li>
+                                <li><a class="" href="">Brake Components</a>
+                                </li>
+                                <li><a class="" href="">Cars &amp; Bike Accessories</a>
+                                </li>
+                                <li><a class="" href="">Safety Equipment</a>
+                                </li>
+                                <li><a class="" href="">Fasteners, Nuts Bolts, Rivets, Clamps</a>
+                                </li>
+                                <li><a class="" href="">Engine Components &amp; Assembly</a>
+                                </li>
+                                <li><a class="" href="">OEM Parts</a>
+                                </li>
+                                <li><a class="" href="">Joints, Shafts, Couplings</a>
+                                </li>
+                                <li><a class="" href="">Bearing, Bushes &amp; Related Items</a>
+                                </li>
+                                <li><a class="" href="">Sheet Metal Components</a>
+                                </li>
+                                <li><a class="" href="">Plastics &amp; Polymer Components</a>
+                                </li>
+                                <li><a class="" href="">Lights &amp; Electricals</a>
+                                </li>
+                                <li><a class="" href="">Motors &amp; Generators &amp; Parts</a>
+                                </li>
+                                <li><a class="" href="">Racing Items for Baja Supra &amp; Gokart</a>
+                                </li>
+                                <li><a class="" href="">Marine Items</a>
+                                </li>
+                                <li><a class="" href="">Aerospace parts</a>
+                                </li>
+                                <li><a class="" href="">Safety Equipments</a>
+                                </li>
+                                <li><a class="" href="">Lubricants &amp; Coolants</a>
+                                </li>
+                                <li><a class="" href="">Railway Items</a>
+                                </li>
+                                <li><a class="" href="">ATV, Snowmoblies, Parts &amp; Accessories</a>
+                                </li>
+                                <li><a class="" href="">Bike &amp; Car spares</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-link" href="" title="">
+                            <div class="send">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
+                            <span>Explore Our Content</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="cat-card even">
+                    	<div class="cat-logo">
+                    		<i class="fa fa-industry fa-2x"></i>
+                    	</div>
+                        <div class="card-content">
+                            <h3>Industrial Raw Materials, Machinery & Supply </h3>
+                            <p>Learn to clean up messy data, uncover patterns and insights, make predictions using machine learning, and clearly communicate critical findings.</p>
+                        </div>
+                        <div class="cat-panel">
+                            <ul class="list-inline">
+                                <li><a href="">Plastics &amp; Polymer Components</a>
+                                </li>
+                                <li><a href="">Safety Equipments</a>
+                                </li>
+                                <li><a href="">Lubricants &amp; Coolants</a>
+                                </li>
+                                <li><a href="">Jigs &amp; Fixtures</a>
+                                </li>
+                                <li><a href="">Industrial Chemicals</a>
+                                </li>
+                                <li><a href="">Sheet Metal Parts</a>
+                                </li>
+                                <li><a href="">Industrial Fuel</a>
+                                </li>
+                                <li><a href="">Cutting, Grinding tools</a>
+                                </li>
+                                <li><a href="">Hand Tools</a>
+                                </li>
+                                <li><a href="">CNC Machines</a>
+                                </li>
+                                <li><a href="">Machine Tools</a>
+                                </li>
+                                <li><a href="">Power Tools</a>
+                                </li>
+                                <li><a href="">Welding setup &amp; Electrodes</a>
+                                </li>
+                                <li><a href="">Adhesive &amp; Sealants</a>
+                                </li>
+                                <li><a href="">Mineral &amp; Ores</a>
+                                </li>
+                                <li><a href="">Paint, Pigments, Dyes &amp; Coatings</a>
+                                </li>
+                                <li><a href="">Packing &amp; Shopping Bags</a>
+                                </li>
+                                <li><a href="">Safety Wear Clothing</a>
+                                </li>
+                                <li><a href="">Material Handling Equipments &amp; Setup</a>
+                                </li>
+                                <li><a href="">Fasteners, Screws, Nuts &amp; Bolts, Rivets</a>
+                                </li>
+                                <li><a href="">Packaging Machines</a>
+                                </li>
+                                <li><a href="">Filling Plant &amp; Setup</a>
+                                </li>
+                                <li><a href="">Plastic Molding &amp; Processing Machine</a>
+                                </li>
+                                <li><a href="">Heavy Machines</a>
+                                </li>
+                                <li><a href="">Furnace &amp; Ovens</a>
+                                </li>
+                                <li><a href="">Industrial Robots</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-link" href="" title="">
+                            <div class="send">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
+                            <span>Explore Our Content</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="cat-card">
+                    	<div class="cat-logo">
+                    		<i class="fa fa-gear fa-2x"></i>
+                    	</div>
+                        <div class="card-content">
+                            <h3>Automobile, Aerospace, Marine & Defense</h3>
+                            <p>Learn to clean up messy data, uncover patterns and insights, make predictions using machine learning, and clearly communicate critical findings.</p>
+                        </div>
+                        <div class="cat-panel">
+                            <ul class="list-inline">
+                                <li><a class="" href="">Wheel Assembly Parts</a>
+                                </li>
+                                <li><a class="" href="">Chassis, Suspension &amp; Steering Parts</a>
+                                </li>
+                                <li><a class="" href="">Powertrain Parts, Gears</a>
+                                </li>
+                                <li><a class="" href="">Brake Components</a>
+                                </li>
+                                <li><a class="" href="">Cars &amp; Bike Accessories</a>
+                                </li>
+                                <li><a class="" href="">Safety Equipment</a>
+                                </li>
+                                <li><a class="" href="">Fasteners, Nuts Bolts, Rivets, Clamps</a>
+                                </li>
+                                <li><a class="" href="">Engine Components &amp; Assembly</a>
+                                </li>
+                                <li><a class="" href="">OEM Parts</a>
+                                </li>
+                                <li><a class="" href="">Joints, Shafts, Couplings</a>
+                                </li>
+                                <li><a class="" href="">Bearing, Bushes &amp; Related Items</a>
+                                </li>
+                                <li><a class="" href="">Sheet Metal Components</a>
+                                </li>
+                                <li><a class="" href="">Plastics &amp; Polymer Components</a>
+                                </li>
+                                <li><a class="" href="">Lights &amp; Electricals</a>
+                                </li>
+                                <li><a class="" href="">Motors &amp; Generators &amp; Parts</a>
+                                </li>
+                                <li><a class="" href="">Racing Items for Baja Supra &amp; Gokart</a>
+                                </li>
+                                <li><a class="" href="">Marine Items</a>
+                                </li>
+                                <li><a class="" href="">Aerospace parts</a>
+                                </li>
+                                <li><a class="" href="">Safety Equipments</a>
+                                </li>
+                                <li><a class="" href="">Lubricants &amp; Coolants</a>
+                                </li>
+                                <li><a class="" href="">Railway Items</a>
+                                </li>
+                                <li><a class="" href="">ATV, Snowmoblies, Parts &amp; Accessories</a>
+                                </li>
+                                <li><a class="" href="">Bike &amp; Car spares</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-link" href="" title="">
+                            <div class="send">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
+                            <span>Explore Our Content</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="cat-card even">
+                    	<div class="cat-logo">
+                    		<i class="fa fa-industry fa-2x"></i>
+                    	</div>
+                        <div class="card-content">
+                            <h3>Industrial Raw Materials, Machinery & Supply </h3>
+                            <p>Learn to clean up messy data, uncover patterns and insights, make predictions using machine learning, and clearly communicate critical findings.</p>
+                        </div>
+                        <div class="cat-panel">
+                            <ul class="list-inline">
+                                <li><a href="">Plastics &amp; Polymer Components</a>
+                                </li>
+                                <li><a href="">Safety Equipments</a>
+                                </li>
+                                <li><a href="">Lubricants &amp; Coolants</a>
+                                </li>
+                                <li><a href="">Jigs &amp; Fixtures</a>
+                                </li>
+                                <li><a href="">Industrial Chemicals</a>
+                                </li>
+                                <li><a href="">Sheet Metal Parts</a>
+                                </li>
+                                <li><a href="">Industrial Fuel</a>
+                                </li>
+                                <li><a href="">Cutting, Grinding tools</a>
+                                </li>
+                                <li><a href="">Hand Tools</a>
+                                </li>
+                                <li><a href="">CNC Machines</a>
+                                </li>
+                                <li><a href="">Machine Tools</a>
+                                </li>
+                                <li><a href="">Power Tools</a>
+                                </li>
+                                <li><a href="">Welding setup &amp; Electrodes</a>
+                                </li>
+                                <li><a href="">Adhesive &amp; Sealants</a>
+                                </li>
+                                <li><a href="">Mineral &amp; Ores</a>
+                                </li>
+                                <li><a href="">Paint, Pigments, Dyes &amp; Coatings</a>
+                                </li>
+                                <li><a href="">Packing &amp; Shopping Bags</a>
+                                </li>
+                                <li><a href="">Safety Wear Clothing</a>
+                                </li>
+                                <li><a href="">Material Handling Equipments &amp; Setup</a>
+                                </li>
+                                <li><a href="">Fasteners, Screws, Nuts &amp; Bolts, Rivets</a>
+                                </li>
+                                <li><a href="">Packaging Machines</a>
+                                </li>
+                                <li><a href="">Filling Plant &amp; Setup</a>
+                                </li>
+                                <li><a href="">Plastic Molding &amp; Processing Machine</a>
+                                </li>
+                                <li><a href="">Heavy Machines</a>
+                                </li>
+                                <li><a href="">Furnace &amp; Ovens</a>
+                                </li>
+                                <li><a href="">Industrial Robots</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-link" href="" title="">
+                            <div class="send">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
+                            <span>Explore Our Content</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="cat-card">
+                    	<div class="cat-logo">
+                    		<i class="fa fa-gear fa-2x"></i>
+                    	</div>
+                        <div class="card-content">
+                            <h3>Automobile, Aerospace, Marine & Defense</h3>
+                            <p>Learn to clean up messy data, uncover patterns and insights, make predictions using machine learning, and clearly communicate critical findings.</p>
+                        </div>
+                        <div class="cat-panel">
+                            <ul class="list-inline">
+                                <li><a class="" href="">Wheel Assembly Parts</a>
+                                </li>
+                                <li><a class="" href="">Chassis, Suspension &amp; Steering Parts</a>
+                                </li>
+                                <li><a class="" href="">Powertrain Parts, Gears</a>
+                                </li>
+                                <li><a class="" href="">Brake Components</a>
+                                </li>
+                                <li><a class="" href="">Cars &amp; Bike Accessories</a>
+                                </li>
+                                <li><a class="" href="">Safety Equipment</a>
+                                </li>
+                                <li><a class="" href="">Fasteners, Nuts Bolts, Rivets, Clamps</a>
+                                </li>
+                                <li><a class="" href="">Engine Components &amp; Assembly</a>
+                                </li>
+                                <li><a class="" href="">OEM Parts</a>
+                                </li>
+                                <li><a class="" href="">Joints, Shafts, Couplings</a>
+                                </li>
+                                <li><a class="" href="">Bearing, Bushes &amp; Related Items</a>
+                                </li>
+                                <li><a class="" href="">Sheet Metal Components</a>
+                                </li>
+                                <li><a class="" href="">Plastics &amp; Polymer Components</a>
+                                </li>
+                                <li><a class="" href="">Lights &amp; Electricals</a>
+                                </li>
+                                <li><a class="" href="">Motors &amp; Generators &amp; Parts</a>
+                                </li>
+                                <li><a class="" href="">Racing Items for Baja Supra &amp; Gokart</a>
+                                </li>
+                                <li><a class="" href="">Marine Items</a>
+                                </li>
+                                <li><a class="" href="">Aerospace parts</a>
+                                </li>
+                                <li><a class="" href="">Safety Equipments</a>
+                                </li>
+                                <li><a class="" href="">Lubricants &amp; Coolants</a>
+                                </li>
+                                <li><a class="" href="">Railway Items</a>
+                                </li>
+                                <li><a class="" href="">ATV, Snowmoblies, Parts &amp; Accessories</a>
+                                </li>
+                                <li><a class="" href="">Bike &amp; Car spares</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-link" href="" title="">
+                            <div class="send">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
+                            <span>Explore Our Content</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="cat-card even">
+                    	<div class="cat-logo">
+                    		<i class="fa fa-industry fa-2x"></i>
+                    	</div>
+                        <div class="card-content">
+                            <h3>Industrial Raw Materials, Machinery & Supply </h3>
+                            <p>Learn to clean up messy data, uncover patterns and insights, make predictions using machine learning, and clearly communicate critical findings.</p>
+                        </div>
+                        <div class="cat-panel">
+                            <ul class="list-inline">
+                                <li><a href="">Plastics &amp; Polymer Components</a>
+                                </li>
+                                <li><a href="">Safety Equipments</a>
+                                </li>
+                                <li><a href="">Lubricants &amp; Coolants</a>
+                                </li>
+                                <li><a href="">Jigs &amp; Fixtures</a>
+                                </li>
+                                <li><a href="">Industrial Chemicals</a>
+                                </li>
+                                <li><a href="">Sheet Metal Parts</a>
+                                </li>
+                                <li><a href="">Industrial Fuel</a>
+                                </li>
+                                <li><a href="">Cutting, Grinding tools</a>
+                                </li>
+                                <li><a href="">Hand Tools</a>
+                                </li>
+                                <li><a href="">CNC Machines</a>
+                                </li>
+                                <li><a href="">Machine Tools</a>
+                                </li>
+                                <li><a href="">Power Tools</a>
+                                </li>
+                                <li><a href="">Welding setup &amp; Electrodes</a>
+                                </li>
+                                <li><a href="">Adhesive &amp; Sealants</a>
+                                </li>
+                                <li><a href="">Mineral &amp; Ores</a>
+                                </li>
+                                <li><a href="">Paint, Pigments, Dyes &amp; Coatings</a>
+                                </li>
+                                <li><a href="">Packing &amp; Shopping Bags</a>
+                                </li>
+                                <li><a href="">Safety Wear Clothing</a>
+                                </li>
+                                <li><a href="">Material Handling Equipments &amp; Setup</a>
+                                </li>
+                                <li><a href="">Fasteners, Screws, Nuts &amp; Bolts, Rivets</a>
+                                </li>
+                                <li><a href="">Packaging Machines</a>
+                                </li>
+                                <li><a href="">Filling Plant &amp; Setup</a>
+                                </li>
+                                <li><a href="">Plastic Molding &amp; Processing Machine</a>
+                                </li>
+                                <li><a href="">Heavy Machines</a>
+                                </li>
+                                <li><a href="">Furnace &amp; Ovens</a>
+                                </li>
+                                <li><a href="">Industrial Robots</a>
+                                </li>little-container
+                            </ul>
+                        </div>
+                        <div class="card-link" href="" title="">
+                            <div class="send">
+                                <i class="fa fa-plus fa-2x"></i>
+                            </div>
+                            <span>Explore Our Content</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="assets\js\jquery\jquery.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		$('.cat-card').click(function() {
+    		   $(this).find('.cat-panel').animate({
+    		     height: "toggle",
+    		     opacity: "toggle"
+    		   }, 300);
+    		   $(this).find('.card-link .fa').toggleClass("fa-plus fa-minus");
+    		   console.log($(this).find('.card-link span').text());
+    		   $(this).find('.card-link span').text($(this).find('.card-link span').text() == 'Explore Our Content' ? 'Show Less' : 'Explore Our Content');
+    		 });
+    	});
+    </script>
+</body>
+
+</html>

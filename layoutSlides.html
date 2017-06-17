@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="assets\css\bootstrap\bootstrap.min.css">
+	<style type="text/css" media="screen">
+		::-webkit-scrollbar {
+		    width: 12px;
+		}
+		 
+		::-webkit-scrollbar-track {
+			background: rgba(195, 195, 195, 0.2);
+		    border-radius: 0;
+		}
+		 
+		::-webkit-scrollbar-thumb {
+		    border-radius: 0px;
+		    background: #fff;
+		}
+		body{
+			background: #1e2021;
+			color: #5f6669;
+			color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;		
+		}
+
+		.slideContainer{
+			height: 80vh;
+			width: 75%;
+			margin: 60px auto;
+		}
+		.slideContainer ._container{
+			position: relative;
+			height: 100%;
+			top: 0;
+			left: 0;
+		}
+
+		.slideLayout3,
+		.slideLayout2,
+		.slideLayout1{
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+		}
+
+		.slideContainer .img-wrapper{
+			position: relative;
+			height: 100%;
+			opacity: 0.5;
+			/*overflow: hidden;*/
+		}
+
+		.img-wrapper .img-slide{
+			position: absolute;
+			/*width: 50%;	*/
+		}
+
+		.img-wrapper .img-slide .img-slide-inner{
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background-position: 50% 50%;
+			background-size: cover;
+		}
+
+
+		/*Layout 1*/
+		.slideLayout1 .img-wrapper .img-slide{
+			width: 50%;	
+		}
+
+		.slideLayout1 .img-slide:first-child{
+			/*top: 0;*/
+			left: 0;
+			height: 100%;
+		}	
+
+		.slideLayout1 .img-slide:nth-child(2){
+			top: 0;
+			left: calc(50% + 0.5em);
+			height: 50%;
+		}
+
+		.slideLayout1 .img-slide:nth-child(3){
+			top: calc(50% + 0.5em);
+			left: calc(50% + 0.5em);
+			height: 50%;			
+		}				
+
+
+		/*Layout 2*/
+		.slideLayout2 .img-wrapper .img-slide{
+			width: 450px;
+			height: 400px;
+		}
+
+		.slideLayout2 .img-slide .img-slide-inner{
+			border: 6px solid #ffeb3b;
+		}
+
+		.slideLayout2 .img-slide:first-child{
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate3d(-50%,-50%,0);
+			transform: translate3d(-50%,-50%,0);
+			z-index: 5;
+		}
+
+		.slideLayout2 .img-wrapper .img-slide:nth-child(2){
+			top: 50%;
+			left: 50%;
+			width: 300px;
+			height: 300px;
+			-webkit-transform: translate3d(-50%,-50%,0) translate3d(-70%,-40%,0) rotate(-16deg);
+			transform: translate3d(-50%,-50%,0) translate3d(-70%,-40%,0) rotate(-16deg);
+			z-index: 4;
+		}
+
+		.slideLayout2 .img-wrapper .img-slide:nth-child(3){
+			top: 50%;
+			left: 50%;
+			width: 300px;
+			height: 300px;
+			-webkit-transform: translate3d(-50%,-50%,0) translate3d(70%,-40%,0) rotate(16deg);
+			transform: translate3d(-50%,-50%,0) translate3d(70%,-40%,0) rotate(16deg);
+			z-index: 3;
+		}
+
+		.slideLayout2 .img-wrapper .img-slide:nth-child(4){
+			top: 50%;
+			left: 50%;
+			width: 300px;
+			height: 300px;
+			-webkit-transform: translate3d(-50%,-50%,0) translate3d(-80%,40%,0) rotate(16deg);
+			transform: translate3d(-50%,-50%,0) translate3d(-80%,40%,0) rotate(16deg);
+			z-index: 2;
+		}
+
+		.slideLayout2 .img-wrapper .img-slide:nth-child(5){
+			top: 50%;
+			left: 50%;
+			width: 300px;
+			height: 300px;
+			-webkit-transform: translate3d(-50%,-50%,0) translate3d(70%,40%,0) rotate(-16deg);
+			transform: translate3d(-50%,-50%,0) translate3d(70%,40%,0) rotate(-16deg);
+			z-index: 1;
+		}
+
+		/*Layout 3*/
+
+		.slideLayout3 .img-wrapper .img-slide{
+			width: 450px;
+			height: 450px;
+			top: 50%;
+			left: 50%;
+		}		
+
+		.slideLayout3 .img-slide:first-child{
+			-webkit-transform: translate3d(-90%,-50%,0);
+			transform: translate3d(-90%,-50%,0);
+			z-index: 1;
+		}
+
+		.slideLayout3 .img-wrapper .img-slide:nth-child(2){
+			-webkit-transform: translate3d(-90%,-50%,0);
+			transform: translate3d(-90%,-50%,0);
+			z-index: 2;
+		}
+
+		.slideLayout3 .img-wrapper .img-slide:nth-child(3){
+			-webkit-transform: translate3d(-90%,-50%,0);
+			transform: translate3d(-90%,-50%,0);
+			z-index: 3;
+		}
+
+		.slideLayout3 .img-wrapper .img-slide:nth-child(4){
+			-webkit-transform: translate3d(-90%,-50%,0);
+			transform: translate3d(-90%,-50%,0);
+			z-index: 4;
+		}
+
+		.slideLayout3 .img-wrapper .img-slide:nth-child(5){
+			-webkit-transform: translate3d(-90%,-50%,0);
+			transform: translate3d(-90%,-50%,0);
+			z-index: 5;
+		}
+
+		.slideLayout3 .img-wrapper .img-slide:nth-child(6){
+			-webkit-transform: translate3d(-90%,-50%,0);
+			transform: translate3d(-90%,-50%,0);
+			z-index: 5;
+		}
+
+		.slideLayout3 .img-wrapper .img-slide:nth-child(7){
+			-webkit-transform: translate3d(-90%,-50%,0);
+			transform: translate3d(-90%,-50%,0);
+			z-index: 5;
+		}
+
+
+		/*Button*/
+		.button-wrapper{
+			position: absolute;
+			top: 73%;
+			right: 20%;
+		}
+
+		.glyphicon{
+			font-size: 45px;
+			margin: 30px;
+		}
+
+
+		/*Para*/
+		.para-wrapper{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			margin: -60px -100px;
+			font-size: 20px;
+			max-width: 700px;
+			z-index: 6;
+
+		}
+
+		.para-wrapper .para-head{
+			font-size: 100px;
+			font-weight: 700;
+		}
+
+		.slidePara{
+			margin: 120px 70px;
+		}
+
+		.slidePara p{
+			font-size: 1.25em;
+			line-height: 1.5;
+			max-width: 600px;
+		}
+	</style>
+</head>
+<body>
+	<section class="slideContainer">
+		<div class="_container">
+			<div class="slideLayout1">
+				<div class="img-wrapper">
+					<div class="img-slide">
+						<div class="img-slide-inner" style="background-image: url(assets/img/slides/1.jpg);"></div>
+					</div>
+					<div class="img-slide">
+						<div class="img-slide-inner" style="background-image: url(assets/img/slides/2.jpg);"></div>
+					</div>
+					<div class="img-slide">
+						<div class="img-slide-inner" style="background-image: url(assets/img/slides/3.jpg);"></div>
+					</div>		
+				</div>
+				<div class="para-wrapper">
+					<div class="para-head">Now or Never</div>
+					<div class="para-sub">Our battered suitcases were piled on the sidewalk again; we had longer ways to go. But no matter, the road is life.</div>
+				</div>
+			</div>
+<!-- 			<div class="slideLayout2">
+				<div class="img-wrapper">
+					<div class="img-slide">
+						<div class="img-slide-inner" style="background-image: url(assets/img/slides/5.jpg);"></div>
+					</div>
+					<div class="img-slide">
+						<div class="img-slide-inner" style="background-image: url(assets/img/slides/6.jpg);"></div>
+					</div>
+					<div class="img-slide">
+						<div class="img-slide-inner" style="background-image: url(assets/img/slides/5.jpg);"></div>
+					</div>		
+					<div class="img-slide">
+						<div class="img-slide-inner" style="background-image: url(assets/img/slides/7.jpg);"></div>
+					</div>
+					<div class="img-slide">
+						<div class="img-slide-inner" style="background-image: url(assets/img/slides/9.jpg);"></div>
+					</div>
+				</div>
+				<div class="para-wrapper">
+					<div class="para-head">Crazy Breed</div>
+					<div class="para-sub">There's those thinking more or less less is more. But if less is more how you're keeping score?</div>
+				</div>
+			</div> -->
+<!-- 			<div class="slideLayout3">
+				<div class="img-wrapper">
+					<div class="img-slide">
+						<div class="img-slide-inner" style="background-image: url(assets/img/slides/5.jpg);"></div>
+					</div>
+					<div class="img-slide">
+						<div class="img-slide-inner" style="background-image: url(assets/img/slides/6.jpg);"></div>
+					</div>
+					<div class="img-slide">
+						<div class="img-slide-inner" style="background-image: url(assets/img/slides/7.jpg);"></div>
+					</div>		
+					<div class="img-slide">
+						<div class="img-slide-inner" style="background-image: url(assets/img/slides/8.jpg);"></div>
+					</div>
+					<div class="img-slide">
+						<div class="img-slide-inner" style="background-image: url(assets/img/slides/9.jpg);"></div>
+					</div>
+					<div class="img-slide">
+						<div class="img-slide-inner" style="background-image: url(assets/img/slides/5.jpg);"></div>
+					</div>
+					<div class="img-slide">
+						<div class="img-slide-inner" style="background-image: url(assets/img/slides/6.jpg);"></div>
+					</div>
+				</div>
+				<div class="para-wrapper">
+					<div class="para-head">Safe Harbor</div>
+					<div class="para-sub">Twenty years from now you will be more disappointed by the things you didn’t do than by the ones you did do.</div>
+				</div>
+			</div> -->
+			<!-- <div class="slideLayout4"></div> -->
+			<!-- <div class="slideLayout5"></div> -->
+			<!-- <div class="slideLayout6"></div> -->
+			<!-- <div class="slideLayout7"></div>	 -->
+		</div>
+	</section>
+	<section class="button-wrapper">
+		<span class="glyphicon glyphicon-arrow-left" id="btn-prev"></span>
+		<span class="glyphicon glyphicon-arrow-right" id="btn-next"></span>
+	</section>
+	<section class="slidePara">
+		<div class="_container">
+			<p>Presently he found himself before the blacksmith's forge. Beside it was a rickety, unpainted gate opening into a snake-fenced lane feathered here and there with scrubby little spruces. It ran down a bare hill, crossed a little ravine full of young white-stemmed birches, and up another bare hill to an equally bare crest where a farmhouse was perched—a farmhouse painted a stark, staring yellow and the ugliest thing in farmhouses that John Lincoln had ever seen, even among the log shacks of the west. He knew now that he had been misdirected, but as there seemed to be nobody about the forge he concluded that he had better go to the yellow house and inquire within. He passed down the lane and over the little rustic bridge that spanned the brook. Just beyond was another home-made gate of poles.</p>
+		
+			<p>For a moment they looked at each other across the gate, sheer amazement and bewilderment holding John Lincoln mute. Sidney, burning with shame, saw that this stranger was exceedingly good to look upon—tall, clean-limbed, broad-shouldered, with clear-cut bronzed features and a chin and eyes that would have done honour to any man. John Lincoln, among all his confused sensations, was aware that this slim, agitated young creature before him was the loveliest thing he ever had seen, so lithe was her figure, so glossy and dark and silken her bare, wind-ruffled hair, so big and brown and appealing her eyes, so delicately oval her flushed cheeks. He felt that she was frightened and in trouble, and he wanted to comfort and reassure her. But how could she be Sidney Richmond?</p>
+
+			<p>I was spending my vacation at Uncle Richard's farm on the Nova Scotian Bay of Fundy shore. I was a great favourite with Uncle Richard, partly because he had been much attached to my mother, his only sister, partly because of my strong resemblance to his only son, who had died several years before. Uncle Richard was a stern, undemonstrative man, but I knew that he entertained a deep and real affection for me, and I always enjoyed my vacation sojourns at his place.</p>
+		</div>
+	</section>
+	<script type="text/javascript" src="assets\js\jquery\jquery.js"></script>	
+	<script type="text/javascript" src="assets\js\anime\anime.js"></script>
+	<script type="text/javascript">	
+		window.onload = function(){
+			var layoutConfig = {
+				slideLayout1: {
+					in: {
+						targets: '.slideLayout1 .img-slide-inner',
+						duration: 800,
+						easing: 'easeOutQuint',
+						translateX: '-100%',
+						translateY: 0,
+						rotateZ: 0,
+						itemsDelay: 20,
+						opacity: [0 ,1]
+					},
+					out: {
+						targets: '.slideLayout1 .img-slide-inner',
+						duration: 800,
+						easing: 'easeOutQuint',
+						translateX: '0%',
+						translateY: 0,
+						rotateZ: function (el, index) {
+							return anime.random(-15, 0);
+						},
+						itemsDelay: 20,
+						opacity: 0
+					}
+				},
+				slideLayout2: {
+					in: {
+						targets: '.slideLayout3 .img-slide-inner',
+						duration: 800,
+						easing: 'easeOutElastic',
+						translateX: function (el, index) {
+							return index * 60;
+						},
+						translateY: function (el, index) {
+							return 10 * index;
+						},
+						rotateZ: function (el, index) {
+							return index * 6;
+						},
+						itemsDelay: 0,
+						opacity: 1
+					},
+					out: {
+						targets: '.slideLayout3 .img-slide-inner',
+						duration: 500,
+						easing: 'easeInOutQuint',
+						translateX: 0,
+						translateY: 0,
+						rotateZ: 0,
+						itemsDelay: 0,
+						opacity: 0
+					}
+				},				
+				slideLayout3: {
+					in: {
+						targets: '.slideLayout3 .img-slide-inner',
+						duration: 800,
+						easing: 'easeOutElastic',
+						translateX: function (el, index) {
+							return index * 60;
+						},
+						translateY: function (el, index) {
+							return 10 * index;
+						},
+						rotateZ: function (el, index) {
+							return index * 6;
+						},
+						itemsDelay: 0,
+						opacity: 1
+					},
+					out: {
+						targets: '.slideLayout3 .img-slide-inner',
+						duration: 500,
+						easing: 'easeInOutQuint',
+						translateX: 0,
+						translateY: 0,
+						rotateZ: 0,
+						itemsDelay: 0,
+						opacity: 0
+					}
+				},
+				slideLayout4: {
+					in: {
+						targets: '.slideLayout3 .img-slide-inner',
+						duration: 800,
+						easing: 'easeOutElastic',
+						translateX: function (el, index) {
+							return index * 60;
+						},
+						translateY: function (el, index) {
+							return 10 * index;
+						},
+						rotateZ: function (el, index) {
+							return index * 6;
+						},
+						itemsDelay: 0,
+						opacity: 1
+					},
+					out: {
+						targets: '.slideLayout3 .img-slide-inner',
+						duration: 500,
+						easing: 'easeInOutQuint',
+						translateX: 0,
+						translateY: 0,
+						rotateZ: 0,
+						itemsDelay: 0,
+						opacity: 0
+					}
+				},
+				slideLayout3: {
+					in: {
+						targets: '.slideLayout3 .img-slide-inner',
+						duration: 800,
+						easing: 'easeOutElastic',
+						translateX: function (el, index) {
+							return index * 60;
+						},
+						translateY: function (el, index) {
+							return 10 * index;
+						},
+						rotateZ: function (el, index) {
+							return index * 6;
+						},
+						itemsDelay: 0,
+						opacity: 1
+					},
+					out: {
+						targets: '.slideLayout3 .img-slide-inner',
+						duration: 500,
+						easing: 'easeInOutQuint',
+						translateX: 0,
+						translateY: 0,
+						rotateZ: 0,
+						itemsDelay: 0,
+						opacity: 0
+					}
+				}
+			}
+
+			function anime_outer(animeObj){
+				anime({
+					targets: animeObj.targets,
+					duration: animeObj.duration,
+					easing: animeObj.easing,
+					translateX: animeObj.translateX,
+					translateY: animeObj.translate
+					// opacity: animeObj.opacity
+				});
+			}
+
+			function anime_inner(animeObj){
+				anime({
+					targets: animeObj.targets,
+					duration: animeObj.duration,
+					easing: animeObj.easing,
+					translateX: animeObj.translateX,
+					translateY: animeObj.translateY,
+					rotateZ: animeObj.rotateZ,
+					itemsDelay: animeObj.itemsDelay,
+					opacity: animeObj.opacity	
+				});
+			}
+
+			$('#btn-next').on('click', function () {
+				anime_inner(layoutConfig.slideLayout1.in);
+				// anime_inner(layoutConfig.slideLayout3.in);
+			});
+
+			$('#btn-prev').on('click', function () {
+				anime_inner(layoutConfig.slideLayout1.out);	
+				// anime_inner(layoutConfig.slideLayout3.out);				
+			});
+
+		}
+	</script>
+</body>
+</html>

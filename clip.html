@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="assets\css\bootstrap\bootstrap.min.css">
+	<style type="text/css" media="screen">
+	/*	body{
+			background-color: #eee;
+		}*/
+		@-webkit-keyframes stripes {
+		  100% {
+		    background-position: 0 -100px;
+		  }
+		}
+
+		@keyframes stripes {
+		  100% {
+		    background-position: 0 -100px;
+		  }
+		}
+
+		.box-with-text{
+/*			position: absolute;
+			top: 50%;
+			left: 50%;*/
+			/*transform: translateX(-50%) translateY(-50%);*/
+			background-image: -webkit-linear-gradient(crimson 50%, white 50%);
+			background-repeat: repeat;
+			background-position: 0 0;
+			background-size: 100% 50px;
+			-webkit-text-fill-color: transparent;
+			-webkit-background-clip: text;
+			-webkit-animation: stripes 2s linear infinite;
+			animation: stripes 2s linear infinite;
+			font-size: 460px;
+			text-transform: uppercase;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="box-with-text">
+				Text 
+			</div>	
+		</div>	
+	</section>
+	<section>
+	<div class="container">
+		<svg viewBox="0 0 600 300">
+		  <text text-anchor="middle"
+		          x="50%"
+		          y="50%"
+		          dy=".35em"
+		          class="text"
+		          >
+		      Text
+		    </text>
+		</svg>
+	</div>
+	</section>
+	<section>
+		<div class="container">
+			div.fil
+		</div>
+	</section>
+</body>
+</html>

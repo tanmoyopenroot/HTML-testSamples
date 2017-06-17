@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="assets\css\bootstrap\bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<style type="text/css" media="screen">
+		html,
+		body {
+		    font-family: 'Lato', sans-serif;
+		    height: 100%;
+		    width: 100%;
+		}
+		
+		a,
+		a:hover,
+		a:active {
+		    text-decoration: none;
+		}
+
+		.left-categories{
+			width: 200px;
+			height: 100%;
+			box-shadow: 2px 4px 8px 0px rgba(46, 61, 73, 0.2);
+		}
+
+		.left-categories .menu-wrap{
+			position: relative;
+		}
+
+		.left-categories .menu-level{
+			position: absolute;
+			top: 0;
+			left: 0;
+			visibility: hidden;
+			overflow: hidden;
+			width: 100%;
+		}
+
+		.left-categories .menu-level.menu-current{
+			visibility: visible;
+		}
+
+		.left-categories .menu-level a{
+			font-weight: 300;
+			position: relative;
+			display: block;
+			font-size: 14px;
+			padding: 1em 2.5em 1em 1.5em;
+			color: #999;
+			-webkit-transition: color .3s cubic-bezier(0, .5, .5, 1);
+			-o-transition: color .3s cubic-bezier(0, .5, .5, 1);
+			transition: color .3s cubic-bezier(0, .5, .5, 1);
+			width: 100%;
+			cursor: pointer;
+		}
+
+		.left-categories .cat-menu-crumbs {
+			font-size: 0.75em;
+			/* position: relative; */
+			line-height: 1;
+			padding: 2.5em 3.75em 1.5em 2.2em;
+		}		
+
+		.left-categories .cat-menu-crumbs a {
+		    font-weight: bold;
+		    /* display: inline-block; */
+		    cursor: pointer;
+		    vertical-align: middle;
+		    letter-spacing: 1px;
+		    text-transform: uppercase;
+		    color: #197;
+		    -webkit-transition: all .3s cubic-bezier(0, .5, .5, 1);
+		    -o-transition: all .3s cubic-bezier(0, .5, .5, 1);
+		    transition: all .3s cubic-bezier(0, .5, .5, 1);
+		}
+
+		.left-categories .cat-menu-crumbs li:last-child {
+		    pointer-events: none;
+		}
+
+		.left-categories .cat-menu-crumbs .list-inline>li {
+		    padding-right: 2px;
+		    padding-left: 2px;
+		}
+
+		.left-categories .cat-menu-crumbs .fa{
+			padding-right: 5px;
+			font-size: 8px;
+		}
+
+		.left-categories .cat-menu-crumbs .fa-chevron-right:before {
+		    color: #999;
+		}
+
+		.left-categories .menu-level a span{
+			position: absolute;
+			top: 50%;
+			right: 10px;
+			transform: translate(-50%, -50%);
+			-webkit-transition: all .3s cubic-bezier(0, .5, .5, 1);
+			-o-transition: all .3s cubic-bezier(0, .5, .5, 1);
+			transition: all .3s cubic-bezier(0, .5, .5, 1);
+		}
+
+		.left-categories .menu-level a .fa-ellipsis-h:before{
+			color: #999;
+		}
+
+		.left-categories .menu-level a:hover{
+			color: #197;
+		}
+
+		.left-categories .menu-level a:hover .fa-ellipsis-h:before{
+			color: #197;
+		}		
+
+		/* Animations */
+		.animate-in-right{
+			-webkit-animation: in-from-right 0.6s both cubic-bezier(0.7, 0, 0.3, 1);
+			animation: in-from-right 0.6s both cubic-bezier(0.7, 0, 0.3, 1)
+		}
+
+		.animate-out-left{
+			-webkit-animation: out-from-left 0.6s both cubic-bezier(0.7, 0, 0.3, 1);
+			animation: out-from-left 0.6s both cubic-bezier(0.7, 0, 0.3, 1)
+		}
+
+		.animate-in-left{
+			-webkit-animation: in-from-left 0.6s both cubic-bezier(0.7, 0, 0.3, 1);
+			animation: in-from-left 0.6s both cubic-bezier(0.7, 0, 0.3, 1)
+		}
+
+		.animate-out-right{
+			-webkit-animation: out-from-right 0.6s both cubic-bezier(0.7, 0, 0.3, 1);
+			animation: out-from-right 0.6s both cubic-bezier(0.7, 0, 0.3, 1)
+		}
+			
+
+
+
+
+		@keyframes in-from-right{
+			from{
+				opacity: 0;
+				-webkit-transform: translate3d(100%, 0, 0);
+				transform: translate3d(100%, 0, 0);
+			}
+
+			to {
+				opacity: 1;
+				-webkit-transform: translate3d(0%, 0, 0);
+				transform: translate3d(0%, 0, 0);
+			}
+		}
+
+		@keyframes out-from-left{
+			from{
+				opacity: 1;
+				-webkit-transform: translate3d(0%, 0, 0);
+				transform: translate3d(0%, 0, 0);
+			}
+
+			to {
+				opacity: 0;
+				-webkit-transform: translate3d(-100%, 0, 0);
+				transform: translate3d(-100%, 0, 0);
+			}
+		}	
+
+
+		@keyframes in-from-left{
+			from{
+				opacity: 0;
+				-webkit-transform: translate3d(-100%, 0, 0);
+				transform: translate3d(-100%, 0, 0);
+			}
+
+			to {
+				opacity: 1;
+				-webkit-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0);
+			}
+		}		
+
+
+
+		@keyframes out-from-right{
+			from{
+				opacity: 1;
+				-webkit-transform: translate3d(0%, 0, 0);
+				transform: translate3d(0%, 0, 0);
+			}
+
+			to {
+				opacity: 0;
+				-webkit-transform: translate3d(100%, 0, 0);
+				transform: translate3d(100%, 0, 0);
+			}
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="left-categories">
+		<nav id="cat-menu">
+			<nav class="cat-menu-crumbs">
+				<ul class="list-inline">
+					<li><a>All</a></li>
+				</ul>
+			</nav>
+			<div class="menu-wrap">
+				<ul data-menu="main" class="main-menu menu-level list-unstyled menu-current">
+					<li class="menu-item" data-submenu="submenu-1"><a href="#" title="">Cat Level 1<span class="fa fa-ellipsis-h"></span></a></li>
+					<li class="menu-item" data-submenu="submenu-2"><a href="#" title="">Cat Level 1<span class="fa fa-ellipsis-h"></span></a></li>
+					<li class="menu-item" data-submenu="submenu-3"><a href="#" title="">Cat Level 1<span class="fa fa-ellipsis-h"></span></a></li>
+					<li class="menu-item" data-submenu="submenu-4"><a href="#" title="">Cat Level 1<span class="fa fa-ellipsis-h"></span></a></li>
+					<li class="menu-item" data-submenu="submenu-5"><a href="#" title="">Cat Level 1<span class="fa fa-ellipsis-h"></span></a></li>
+				</ul>
+				<ul data-menu="submenu-1" class="menu-level list-unstyled">
+					<li class="menu-item"><a href="#" title="">Cat Level-2   1-1</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   1-2</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   1-3</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   1-4</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   1-5</a></li>
+				</ul>
+				<ul data-menu="submenu-2" class="menu-level list-unstyled">
+					<li class="menu-item"><a href="#" title="">Cat Level-2   2-1</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   2-2</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   2-3</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   2-4</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   2-5</a></li>
+				</ul>
+				<ul data-menu="submenu-3" class="menu-level list-unstyled">
+					<li class="menu-item"><a href="#" title="">Cat Level-2   3-1</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   3-2</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   3-3</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   3-4</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   3-5</a></li>
+				</ul>
+				<ul data-menu="submenu-4" class="menu-level list-unstyled">
+					<li class="menu-item"><a href="#" title="">Cat Level-2   4-1</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   4-2</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   4-3</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   4-4</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   4-5</a></li>
+				</ul>
+				<ul data-menu="submenu-5" class="menu-level list-unstyled">
+					<li class="menu-item"><a href="#" title="">Cat Level-2   5-1</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   5-2</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   5-3</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   5-4</a></li>
+					<li class="menu-item"><a href="#" title="">Cat Level-2   5-5</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<script type="text/javascript" src="assets\js\jquery\jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+
+			var submenu, subMenuEl, currentMenu, lastClick;
+			function addMoveAniamtion(element, direction){
+				if(direction == "animate-out-left"){
+					element.children('.menu-item').each(function(index, el) {
+						$(this).addClass(direction);
+					});
+				}
+				else if(direction == "animate-in-right"){
+					element.children('.menu-item').each(function(index, el) {
+						$(this).addClass(direction);
+					});
+				}
+				else if(direction == "animate-out-right"){
+					element.children('.menu-item').each(function(index, el) {
+						$(this).addClass(direction);
+					});
+				}
+				else if(direction == "animate-in-left"){
+					element.children('.menu-item').each(function(index, el) {
+						$(this).addClass(direction);
+					});
+				}
+
+			}
+
+			function removeAnimation(element, direction){
+				if(direction == "animate-out-left"){
+					element.children('.menu-item').each(function(index, el) {
+						$(this).removeClass(direction);
+					});
+				}
+				else if(direction == "animate-in-right"){
+					element.children('.menu-item').each(function(index, el) {
+						$(this).removeClass(direction);
+					});
+				}
+				else if(direction == "animate-out-right"){
+					element.children('.menu-item').each(function(index, el) {
+						$(this).removeClass(direction);
+					});
+				}
+				else if(direction == "animate-in-left"){
+					element.children('.menu-item').each(function(index, el) {
+						$(this).removeClass(direction);
+					});
+				}				
+			}
+
+
+			function removeAnimateClass(element){
+				element.children('.menu-item').each(function(index, el) {
+					$(this).removeClass("animate-out-left");
+					$(this).removeClass("animate-in-right");
+					$(this).removeClass("animate-out-right");
+					$(this).removeClass("animate-in-left");
+				});
+			}
+
+			function addAnimationDelay(element, i){
+				element.children('.menu-item').each(function(index, el) {
+					$(this).css('animation-delay', Math.abs(index-i) * 60 + 'ms');
+				});
+			}
+
+
+			function addBreadCrumb(value){
+				$(".cat-menu-crumbs .list-inline").append('<li><span class="fa fa-chevron-right"></span><a>' + value + '</a></li>');
+			}
+
+
+			$(".main-menu.menu-level").each(function(index, el){
+				$(this).children('.menu-item').each(function(index, el) {
+					$(this).on('click', function(event) {
+						console.log($(this).text());
+						addBreadCrumb($(this).text());
+						lastClick = index;
+						addAnimationDelay($(".menu-current"), index);
+						addMoveAniamtion($(".menu-current"), "animate-out-left");
+
+						submenu = this.getAttribute('data-submenu');
+						$("ul[data-menu=" + submenu + "]").addClass('menu-current');
+						addAnimationDelay($("ul[data-menu=" + submenu + "]"), index);
+						addMoveAniamtion($(".menu-current"), "animate-in-right");
+						// $(".main-menu.menu-level").removeClass('menu-current');
+						setTimeout(function() {
+							$(".main-menu.menu-level").removeClass('menu-current');
+							removeAnimateClass($(".main-menu.menu-level"));
+						}, 500);
+					});	
+				}); 
+			});
+
+
+			$(".left-categories .cat-menu-crumbs li:first-child").on('click', function(event) {
+				$(".left-categories .cat-menu-crumbs li:last-child").remove();
+				addAnimationDelay($(".menu-current"), lastClick);
+				addMoveAniamtion($(".menu-current"), "animate-out-right");
+
+				setTimeout(function() {
+					// removeAnimation($(".menu-current"), "animate-out-left");
+					addAnimationDelay($(".menu-current"), lastClick);
+					$(".main-menu.menu-level").addClass('menu-current');
+					addMoveAniamtion($(".menu-current"), "animate-in-left");
+					setTimeout(function() {
+						$("ul[data-menu=" + submenu + "]").removeClass('menu-current');	
+						removeAnimateClass($("ul[data-menu=" + submenu + "]"));
+						removeAnimateClass($(".main-menu.menu-level"));
+					},700);
+				}, 200);
+			});
+		})
+	</script>
+</body>
+</html>

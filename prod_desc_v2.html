@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css" media="screen">
+    .prod_desc_cont {
+        color: #212121;
+        font-family: 'Lato', sans-serif;
+    }
+    
+    .prod_desc_cont .box {
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 2px 3px rgba(0, 0, 0, .2);
+        background: #fff;
+        margin: 10px 0px;
+        padding: 20px;
+        position: relative;
+    }
+    
+    .prod_desc_cont .prod_name_hover {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        cursor: pointer;
+        -webkit-transition: opacity 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+        transition: opacity 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+    }
+    
+    .prod_desc_cont .prod_name_hover:hover {
+        opacity: 1;
+    }
+    
+    .prod_desc_cont .prod_name_hover h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        font-size: 18px;
+        color: #fff;
+        z-index: 10;
+        opacity: 0;
+        -webkit-transition: opacity 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+        transition: opacity 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+    }
+    
+    .prod_desc_cont .prod_name_hover:hover h1 {
+        opacity: 1;
+    }
+    
+    .prod_desc_cont .prod_inquiry ul {
+        width: 100%;
+        margin: 0px;
+    }
+    
+    .prod_desc_cont .prod_inquiry li {
+        width: 49.5%;
+        padding: 0px
+    }
+    
+    .prod_desc_cont .prod_inquiry button {
+        width: 100%;
+    }
+    
+    .prod_desc_cont .prod_inquiry li:nth-child(1) button {
+        background-color: #197;
+        border: 2px solid #197;
+        color: #fff;
+        border-radius: 0px;
+        padding: 10px 30px;
+        width: 100%;
+    }
+    
+    .prod_desc_cont .prod_inquiry li:nth-child(2) button {
+        background-color: #fff;
+        color: #197;
+        border: 2px solid #197;
+        border-radius: 0px;
+        padding: 10px 25px;
+        width: 100%;
+    }
+    
+    .prod_desc_cont .col-md-8 .box {
+        padding: 20px 90px;
+    }
+    
+    .prod_desc_cont h1 {
+        color: #212121;
+        font-size: 24px;
+        /* font-weight: 700; */
+        text-transform: capitalize;
+        text-align: center;
+    }
+    
+    .prod_desc_cont .desc p {
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 24px;
+        /* letter-spacing: 0.075em; */
+        /* color: #000; */
+        text-align: left;
+    }
+    
+    .prod_desc_cont .prod_delivery,
+    .prod_desc_cont .prod_seller,
+    .prod_desc_cont .prod_price {
+        position: relative;
+    }
+    
+    .prod_desc_cont .prod_delivery h3,
+    .prod_desc_cont .prod_seller h3,
+    .prod_desc_cont .prod_price h3 {
+        font-weight: 400;
+        color: #197;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.275em;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-top: 42px;
+        margin-bottom: 36px;
+        text-align: center;
+    }
+    
+    .prod_desc_cont .prod_delivery:before,
+    .prod_desc_cont .prod_seller:before,
+    .prod_desc_cont .prod_price:before {
+        border-top: 2px solid #D8D8D8;
+        content: '';
+        height: 10px;
+        position: absolute;
+        top: 6px;
+        width: 40%;
+        /* background: aquamarine; */
+        left: 0px;
+    }
+    
+    .prod_desc_cont .prod_delivery:after,
+    .prod_desc_cont .prod_seller:after,
+    .prod_desc_cont .prod_price:after {
+        border-top: 2px solid #D8D8D8;
+        content: '';
+        height: 10px;
+        position: absolute;
+        top: 6px;
+        width: 40%;
+        /* background: aquamarine; */
+        right: 0px;
+    }
+    
+    .prod_desc_cont .prod_price ul {
+        text-align: center;
+    }
+    
+    .prod_desc_cont .prod_price li {
+        color: #212121;
+        font-weight: 500;
+        font-size: 28px
+    }
+    
+    .prod_desc_cont .prod_seller div {
+        text-align: center;
+    }
+    
+    .prod_desc_cont dt {
+        color: #197;
+        line-height: 1.8em;
+        padding-right: 10px;
+        font-weight: 700;
+        text-align: left;
+    }
+    
+    .prod_desc_cont dd,
+    .prod_desc_cont dd li {
+        line-height: 1.8em;
+        color: #878787;
+    }
+    
+    .prod_desc_cont .prod_delivery {
+        font-weight: 700;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="prod_desc_cont">
+        <div class="container">
+            <div class="row">
+                <div class="_box">
+                    <div class="col-md-4">
+                        <div class="box">
+                            <div class="prod_img_cont">
+                                <img src="http://www.indiantradebird.com/admin/members/15783/images/0_f030e10e.jpg" alt="" class="img-responsive">
+                            </div>
+                            <div class="prod_name_hover">
+                                <h1>Geotextile universal tesing machine</h1>
+                            </div>
+                        </div>
+                        <div class="prod_inquiry">
+                            <ul class="list-inline">
+                                <li>
+                                    <button type="">Send Inquiry</button>
+                                </li>
+                                <li>
+                                    <button type="">Post Requirement</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="box">
+                            <h1>Geotextile universal tesing machine</h1>
+                            <div class="desc">
+                                <p>Laser Based spot welding machine for various jewellery metals welding on industrial scale equipped with bright touch screen for ease of work. Fast, deep and quality welding. Suitable to work on precious metallic area near gems and diamonds. Suitable for welding silver, yellow and white gold, Platinum and titanium</p>
+                            </div>
+                            <div class="prod_price">
+                                <h3>Price</h3>
+                                <ul class="list-inline">
+                                    <li><i class="fa fa fa-inr"></i></li>
+                                    <li>30 to 65 Lakhs</li>
+                                </ul>
+                            </div>
+                            <div class="prod_seller">
+                                <h3>Seller</h3>
+                                <div>SHS ADVISORY GROUP</div>
+                            </div>
+                            <div class="prod_delivery">
+                                <h3>Delivery</h3>
+                                <p>Delivery within 4/6 weeks anywhere in India after reception of 50% advance money with purchase order</p>
+                                <dl class="dl-horizontal">
+                                    <dt>Delivery Charges</dt>
+                                    <dd>10000</dd>
+                                    <dt>Minimum Order</dt>
+                                    <dd>
+                                        1
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

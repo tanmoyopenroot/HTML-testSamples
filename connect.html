@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style type="text/css" media="screen">
+  .connect_container {
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    background: #fafbfc!important;
+  }
+  
+  .connect_container .box {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 2px 3px rgba(0, 0, 0, .2);
+    background: #fff;
+    margin: 10px 0px;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .connect_container .connect_head h1 {
+    width: 100%;
+    font-weight: 300;
+    text-align: center;
+    font-size: 25px;
+    line-height: 1.5;
+  }
+  
+  .connect_container .connect_head p {
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, .04);
+    color: #197;
+    width: 100%;
+    font-size: 13px;
+    text-align: center;
+  }
+  
+  .connect_container .person_cont {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 12px 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, .04);
+    /* border-top: 1px solid rgba(0, 0, 0, .04); */
+  }
+  
+  .connect_container .connect_checkbox input[type=checkbox] {
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  .connect_container .connect_tool .check,
+  .connect_container .person_cont .check {
+    position: absolute;
+    border: 1px solid #AAAAAA;
+    border-radius: 2px;
+    height: 20px;
+    width: 20px;
+    top: 4px;
+    left: 20px;
+    z-index: 5;
+    transition: background 0.25s linear;
+    -webkit-transition: background 0.25s linear;
+  }
+  
+  .connect_container .connect_tool .check::before,
+  .connect_container .person_cont .check::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    height: 7px;
+    width: 14px;
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    transform: rotate(-45deg);
+    z-index: 10;
+  }
+  
+  .connect_container .connect_tool input[type=checkbox]:checked ~ .check,
+  .connect_container .person_cont input[type=checkbox]:checked ~ .check {
+    background: #197;
+    border: 1px solid #197;
+  }
+  
+  .connect_container .connect_img {
+    margin-left: 40px;
+  }
+  
+  .connect_container .connect_img img {
+    /*     border-radius: 50%;
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 3px; */
+  }
+  
+  .connect_container .connect_person h4 {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 24px;
+    color: rgba(0, 0, 0, .85);
+    margin-left: 15px;
+  }
+
+  .connect_container .connect_tool li:nth-child(1) {
+    display: inline-flex;
+  }
+
+  .connect_container .connect_tool .connect_checkbox {
+  	margin-left: -15px;
+  }
+
+  .connect_container .connect_tool .connect_select {
+  	margin: 14px 40px;
+  } 
+
+  .connect_container .connect_tool .skip_btn{
+  	color: rgba(0,0,0,.7);
+  	font-weight: 700;
+  	margin-right: 20px;
+  }
+
+  .connect_container .connect_tool .connect_btn{
+  	background-color: #197;
+  	border-color: #197;
+  	border-radius: 0px;
+  }
+  
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="connect_container">
+      <div class="box">
+        <div class="connect_head">
+          <h1>Connect with people you know</h1>
+          <p>We found 7 people you know. Select the people you’d like to connect to.</p>
+        </div>
+        <div class="row">
+          <ul class="list-unstyled">
+            <li class="col-md-6 person_cont">
+              <div class="checkbox connect_checkbox">
+                <label>
+                  <input type="checkbox">
+                  <div class="check">
+                  </div>
+                </label>
+              </div>
+              <div class="connect_img">
+                <img width="50" height="50" src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAANTAAAAJGY5YjJjN2IzLWY5ZDUtNGFlZS05Yzc3LTI2ZmZhYjhiYTdlMw.jpg" class="img-circle">
+              </div>
+              <div class="connect_person">
+                <h4>Madhav Bhagat</h4>
+              </div>
+            </li>
+            <li class="col-md-6 person_cont">
+              <div class="checkbox connect_checkbox">
+                <label>
+                  <input type="checkbox">
+                  <div class="check">
+                  </div>
+                </label>
+              </div>
+              <div class="connect_img">
+                <img width="50" height="50" src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAANTAAAAJGY5YjJjN2IzLWY5ZDUtNGFlZS05Yzc3LTI2ZmZhYjhiYTdlMw.jpg" class="img-circle">
+              </div>
+              <div class="connect_person">
+                <h4>Madhav Bhagat</h4>
+              </div>
+            </li>
+            <li class="col-md-6 person_cont">
+              <div class="checkbox connect_checkbox">
+                <label>
+                  <input type="checkbox">
+                  <div class="check">
+                  </div>
+                </label>
+              </div>
+              <div class="connect_img">
+                <img width="50" height="50" src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAANTAAAAJGY5YjJjN2IzLWY5ZDUtNGFlZS05Yzc3LTI2ZmZhYjhiYTdlMw.jpg" class="img-circle">
+              </div>
+              <div class="connect_person">
+                <h4>Madhav Bhagat</h4>
+              </div>
+            </li>
+            <li class="col-md-6 person_cont">
+              <div class="checkbox connect_checkbox">
+                <label>
+                  <input type="checkbox">
+                  <div class="check">
+                  </div>
+                </label>
+              </div>
+              <div class="connect_img">
+                <img width="50" height="50" src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAANTAAAAJGY5YjJjN2IzLWY5ZDUtNGFlZS05Yzc3LTI2ZmZhYjhiYTdlMw.jpg" class="img-circle">
+              </div>
+              <div class="connect_person">
+                <h4>Madhav Bhagat</h4>
+              </div>
+            </li>
+            <li class="col-md-6 person_cont">
+              <div class="checkbox connect_checkbox">
+                <label>
+                  <input type="checkbox">
+                  <div class="check">
+                  </div>
+                </label>
+              </div>
+              <div class="connect_img">
+                <img width="50" height="50" src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAANTAAAAJGY5YjJjN2IzLWY5ZDUtNGFlZS05Yzc3LTI2ZmZhYjhiYTdlMw.jpg" class="img-circle">
+              </div>
+              <div class="connect_person">
+                <h4>Madhav Bhagat</h4>
+              </div>
+            </li>
+            <li class="col-md-6 person_cont">
+              <div class="checkbox connect_checkbox">
+                <label>
+                  <input type="checkbox">
+                  <div class="check">
+                  </div>
+                </label>
+              </div>
+              <div class="connect_img">
+                <img width="50" height="50" src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAANTAAAAJGY5YjJjN2IzLWY5ZDUtNGFlZS05Yzc3LTI2ZmZhYjhiYTdlMw.jpg" class="img-circle">
+              </div>
+              <div class="connect_person">
+                <h4>Madhav Bhagat</h4>
+              </div>
+            </li>
+            <li class="col-md-6 person_cont">
+              <div class="checkbox connect_checkbox">
+                <label>
+                  <input type="checkbox">
+                  <div class="check">
+                  </div>
+                </label>
+              </div>
+              <div class="connect_img">
+                <img width="50" height="50" src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAANTAAAAJGY5YjJjN2IzLWY5ZDUtNGFlZS05Yzc3LTI2ZmZhYjhiYTdlMw.jpg" class="img-circle">
+              </div>
+              <div class="connect_person">
+                <h4>Madhav Bhagat</h4>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="connect_tool">
+          <ul class="list-inline">
+            <li>
+              <div class="checkbox connect_checkbox">
+                <label>
+                  <input type="checkbox">
+                  <div class="check">
+                  </div>
+                </label>
+              </div>
+              <div class="connect_select">
+                Select All
+              </div>
+            </li>
+            <li>
+            	<button type="button" class="btn skip_btn">Skip</button>
+            </li>
+            <li>
+              <button type="button" class="btn btn-primary connect_btn">Add Connections</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

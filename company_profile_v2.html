@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Company Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css" media="screen">
+    a,
+    a:hover,
+    a:active {
+        text-decoration: none;
+        color: #197;
+        transition: all .2s linear;
+    }
+    
+    .comp_profile {
+        background: #f5f5f5;
+        color: rgba(0, 0, 0, .7);
+    }
+    
+    .comp_profile .form-group .tag {
+        font-size: 13px;
+        padding: 5px;
+        text-transform: capitalize;
+        color: rgba(0, 0, 0, .6);
+        border: 1px solid rgba(0, 0, 0, .09);
+        border-radius: 4px;
+    }
+    
+    .comp_profile .form-group .data_title {
+        font-weight: 700;
+        color: #333;
+        margin: 15px 0px 10px 0px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, .09);
+        width: 80%;
+    }
+    
+    .comp_profile h4 {
+        color: rgba(0, 0, 0, .85);
+    }
+    
+    .comp_profile .box {
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 2px 3px rgba(0, 0, 0, .2);
+        background: #fff;
+        margin: 10px 0px;
+        padding: 20px;
+        position: relative;
+    }
+    
+    .comp_profile .comp_body .container {
+        /* margin-top: -60px; */
+    }
+    
+    .comp_profile .comp_back {
+                background-image: url('https://media.licdn.com/media/AAEAAQAAAAAAAAfvAAAAJDYxZTExNjQ2LWYzOTMtNGE5Yy05NzJjLWU1YjJhODBiNWIzMA.jpg');
+        /* background: #197; */
+        height: 300px;
+        /* box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 2px 3px rgba(0, 0, 0, .2); */
+        background-size: cover;
+    }
+    
+    .comp_profile .comp_name img {
+        margin-top: -100px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+    }
+    
+    .comp_profile .comp_name .rating {
+        float: left;
+        margin-right: 10px;
+    }
+    
+    .comp_profile .comp_name .comp_name_button {
+        position: absolute;
+        right: 25px;
+        bottom: 35px;
+    }
+    
+    .comp_profile .comp_name .comp_name_button button {
+        border: 0px;
+        padding: 10px 20px;
+        background: #197;
+        color: #fff;
+    }
+    
+    .comp_profile .nav-pills>li>a {
+        border-radius: 0px;
+    }
+    
+    .comp_profile .nav-pills>li.active>a,
+    .nav-pills>li.active>a:focus,
+    .nav-pills>li.active>a:hover {
+        color: #fff;
+        background-color: #197;
+    }
+    
+    .comp_profile .inline_fa {
+        margin: 0 8px;
+        margin-left: 0;
+    }
+    
+    .comp_profile .similar_comp .similar_comp_pic {
+        margin: 0px 0px 40px 0px;
+    }
+    
+    .comp_profile .comp_blog h4,
+    .comp_profile .similar_comp h4 {
+        padding-bottom: 20px;
+        border-bottom: 1px solid #d2cece;
+    }
+    
+    .comp_profile .similar_comp div figure {
+        float: left;
+        margin-right: 15px;
+    }
+    
+    .comp_profile .similar_comp figure img {
+        max-width: 70px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="comp_profile">
+        <!--         <div class="comp_back">
+            <div class="container">
+            </div>
+        </div> -->
+        <div class="comp_body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 comp_name">
+                        <div class="comp_back">
+                        </div>
+                        <div style="margin-top: -60px;">
+                            <div class="box">
+                                <div class="row">
+                                    <div class="col-md-2" style="text-align: right;">
+                                        <img class="lazy-image org-top-card-module__logo loaded " alt="Facebook Logo " height="120 " width="120 " src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAYRAAAAJDVlMzBlYjNiLTAxN2QtNGQxZC1iZTAzLTlmNWQ1OTE4OGY4ZA.png ">
+                                    </div>
+                                    <div class="col-md-5 ">
+                                        <h3>Facebook</h3>
+                                        <ul class="list-inline ">
+                                            <li>Internet</li>
+                                            <li><i class="fa inline_fa fa-ellipsis-v "></i>10,000+ employees</li>
+                                            <li><i class="fa inline_fa fa-ellipsis-v "></i>Menlo Park</li>
+                                        </ul>
+                                        <a href="" class="rating">
+                                            <ul class="list-inline ">
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                                <li><i class="fa fa-star-o"></i></li>
+                                            </ul>
+                                        </a>
+                                        <a href="" title="">
+                                        Leave a review for this business
+                                    </a>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <ul class="list-inline" style="text-align: right;">
+                                            <li><i class="fa fa-facebook fa-2x"></i></li>
+                                            <li><i class="fa fa-linkedin-square fa-2x"></i></li>
+                                            <li><i class="fa fa-google-plus-square fa-2x"></i></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="comp_name_button">
+                                    <button type=""><i class="fa inline_fa fa-feed"></i>Follow</button>
+                                    <button type=""><i class="fa inline_fa fa-envelope"></i>Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="_col-md-12 comp_profile_tabs">
+                            <div class="box">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href=""><i class="fa inline_fa fa-info-circle"></i>About</a></li>
+                                    <li class=""><a href=""><i class="fa inline_fa fa-phone"></i>Contact</a></li>
+                                    <li class=""><a href=""><i class="fa inline_fa fa-cube"></i>Product And Services</a></li>
+                                    <li class=""><a href=""><i class="fa inline_fa fa-users"></i>People</a></li>
+                                    <li class=""><a href=""><i class="fa inline_fa fa-edit"></i>Activity</a></li>
+                                </ul>
+                                <br>
+                                <br>
+                                <ul class="tabs_content list-unstyled">
+                                    <li class="">
+                                        <div class="tabs_content_wrapper">
+                                            <p>CoreLogs is a Business enabling website for SMEs and a platform to connect the SMEs to the world and vice versa. The CoreLogs Profile of an SMEs is now the front page of that SME on internet. Apart from that, CoreLogs provides the SMEs with a unique and sophisticated product listing platform. Here they can select their target audience and get their products featured in the Marketplace. CoreLogs also provides the SAE teams and Racing enthusiasts with a platform where they can buy and sell mechanical components and racing accessories.
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-md-6 form-group">
+                                                    <div class="data_title">Operating in</div>
+                                                    <ul class="list-inline">
+                                                        <li><i class="fa fa-map-o fa-fw"></i></li>
+                                                        <li><a class="tag" data-toggle="tooltip" data-placement="bottom">Bangalore North</a></li>
+                                                        <li><a class="tag" data-toggle="tooltip" data-placement="bottom">Kolkata</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6 form-group">
+                                                    <div class="data_title">Industry</div>
+                                                    <ul class="list-inline">
+                                                        <li><i class="fa fa-industry fa-fw"></i></li>
+                                                        <li><a class="tag" data-toggle="tooltip" data-placement="bottom">Mechanical Engineering</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6 form-group">
+                                                    <div class="data_title">Keywords</div>
+                                                    <ul class="list-inline">
+                                                        <li><i class="fa fa-list fa-fw"></i></li>
+                                                        <li><a class="tag" data-toggle="tooltip" data-placement="bottom">Mechanical Engineering</a></li>
+                                                        <li><a class="tag" data-toggle="tooltip" data-placement="bottom">Internet</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6 form-group">
+                                                    <div class="data_title">Business size</div>
+                                                    <ul class="list-inline">
+                                                        <li><i class="fa fa-users fa-fw"></i></li>
+                                                        <li><a class="tag" data-toggle="tooltip" data-placement="bottom"> 1-10 employees </a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="_col-md-12 comp_intrest ">
+                            <div class="box ">
+                                <h4>Facebook's Intrest</h4>
+                            </div>
+                            <div class="_row ">
+                                <div class="box col-md-4 ">
+                                    <h4>Chrome Tips and Ticks</h4>
+                                    <h5>Google Chrome</h5>
+                                    <br>
+                                    <br>
+                                    <a href=" " title=" ">FOLLOWING</a>
+                                </div>
+                                <div class="box col-md-4 ">
+                                    <h4>Chrome Tips and Ticks</h4>
+                                    <h5>Google Chrome</h5>
+                                    <br>
+                                    <br>
+                                    <a href=" " title=" ">FOLLOWING</a>
+                                </div>
+                                <div class="box col-md-4 ">
+                                    <h4>Chrome Tips and Ticks</h4>
+                                    <h5>Google Chrome</h5>
+                                    <br>
+                                    <br>
+                                    <a href=" " title=" ">FOLLOWING</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--                         <div class="col-md-8 comp_blog ">
+                            <div>
+                                <h4>Recent Updates</h4>
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-12">
+                                    <div class="box ">
+                                        <h5>Product D</h5>
+                                        <p> Flying jets in the navy isn’t a traditional path to working in tech. While I was fascinated with technology growing up, I wasn’t sure that my experience as a naval aviator would translate to working in Silicon Valley because I wasn’t a computer engineer.</p>
+                                        <div class="blog_img_cont">
+                                            <a href="" title="">
+                                                <div class="blog_img"></div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="box ">
+                                        <h5>Product D</h5>
+                                        <p> Flying jets in the navy isn’t a traditional path to working in tech. While I was fascinated with technology growing up, I wasn’t sure that my experience as a naval aviator would translate to working in Silicon Valley because I wasn’t a computer engineer.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!--                         <div class="col-md-4 similar_comp ">
+                            <div>
+                                <h4>Similar Companies</h4>
+                            </div>
+                            <dl>
+                                <div class="similar_comp_pic ">
+                                    <figure>
+                                        <a href="# " id="ember8428 " class="logo-image-link ember-view ">
+                                            <img class="lazy-image org-company-card__img company-logo-image loaded " alt="Google Logo " src="https://media.licdn.com/mpr/mpr/shrink_400_400/AAEAAQAAAAAAAALTAAAAJGY1NGY1N2ZhLTNmZmUtNGRmZi1iMDgxLTJjZjdkNjNkYmZlOQ.png ">
+                                        </a>
+                                    </figure>
+                                    <dt>Google</dt>
+                                    <dd>Internet</dd>
+                                    <dd>10000+ employees</dd>
+                                </div>
+                                <div class="similar_comp_pic ">
+                                    <figure>
+                                        <a href="# " id="ember8428 " class="logo-image-link ember-view ">
+                                            <img class="lazy-image org-company-card__img company-logo-image loaded " alt="Google Logo " src="https://media.licdn.com/mpr/mpr/shrink_400_400/AAEAAQAAAAAAAALTAAAAJGY1NGY1N2ZhLTNmZmUtNGRmZi1iMDgxLTJjZjdkNjNkYmZlOQ.png ">
+                                        </a>
+                                    </figure>
+                                    <dt>Google</dt>
+                                    <dd>Internet</dd>
+                                    <dd>10000+ employees</dd>
+                                </div>
+                                <div class="similar_comp_pic ">
+                                    <figure>
+                                        <a href="# " id="ember8428 " class="logo-image-link ember-view ">
+                                            <img class="lazy-image org-company-card__img company-logo-image loaded " alt="Google Logo " src="https://media.licdn.com/mpr/mpr/shrink_400_400/AAEAAQAAAAAAAALTAAAAJGY1NGY1N2ZhLTNmZmUtNGRmZi1iMDgxLTJjZjdkNjNkYmZlOQ.png ">
+                                        </a>
+                                    </figure>
+                                    <dt>Google</dt>
+                                    <dd>Internet</dd>
+                                    <dd>10000+ employees</dd>
+                                </div>
+                                <div class="similar_comp_pic ">
+                                    <figure>
+                                        <a href="# " id="ember8428 " class="logo-image-link ember-view ">
+                                            <img class="lazy-image org-company-card__img company-logo-image loaded " alt="Google Logo " src="https://media.licdn.com/mpr/mpr/shrink_400_400/AAEAAQAAAAAAAALTAAAAJGY1NGY1N2ZhLTNmZmUtNGRmZi1iMDgxLTJjZjdkNjNkYmZlOQ.png ">
+                                        </a>
+                                    </figure>
+                                    <dt>Google</dt>
+                                    <dd>Internet</dd>
+                                    <dd>10000+ employees</dd>
+                                </div>
+                            </dl>
+                        </div> -->
+                    </div>
+                    <div class="col-md-3">
+                        <div class="_col-md-12">
+                            <div class="box col-md-12 col-sm-4">
+                                <h4>Chrome Tips and Ticks</h4>
+                                <h5>Google Chrome</h5>
+                                <br>
+                                <br>
+                                <a href=" " title=" ">FOLLOWING</a>
+                            </div>
+                            <div class="box col-md-12 col-sm-4">
+                                <h4>Chrome Tips and Ticks</h4>
+                                <h5>Google Chrome</h5>
+                                <br>
+                                <br>
+                                <a href=" " title=" ">FOLLOWING</a>
+                            </div>
+                            <div class="box col-md-12 col-sm-4">
+                                <h4>Chrome Tips and Ticks</h4>
+                                <h5>Google Chrome</h5>
+                                <br>
+                                <br>
+                                <a href=" " title=" ">FOLLOWING</a>
+                            </div>
+                            <div class="col-md-12 col-xs-12 similar_comp ">
+                                <div>
+                                    <h4>Similar Companies</h4>
+                                </div>
+                                <dl>
+                                    <div class="similar_comp_pic ">
+                                        <figure>
+                                            <a href="# " id="ember8428 " class="logo-image-link ember-view ">
+                                                <img class="lazy-image org-company-card__img company-logo-image loaded " alt="Google Logo " src="https://media.licdn.com/mpr/mpr/shrink_400_400/AAEAAQAAAAAAAALTAAAAJGY1NGY1N2ZhLTNmZmUtNGRmZi1iMDgxLTJjZjdkNjNkYmZlOQ.png ">
+                                            </a>
+                                        </figure>
+                                        <dt>Google</dt>
+                                        <dd>Internet</dd>
+                                        <dd>10000+ employees</dd>
+                                    </div>
+                                    <div class="similar_comp_pic ">
+                                        <figure>
+                                            <a href="# " id="ember8428 " class="logo-image-link ember-view ">
+                                                <img class="lazy-image org-company-card__img company-logo-image loaded " alt="Google Logo " src="https://media.licdn.com/mpr/mpr/shrink_400_400/AAEAAQAAAAAAAALTAAAAJGY1NGY1N2ZhLTNmZmUtNGRmZi1iMDgxLTJjZjdkNjNkYmZlOQ.png ">
+                                            </a>
+                                        </figure>
+                                        <dt>Google</dt>
+                                        <dd>Internet</dd>
+                                        <dd>10000+ employees</dd>
+                                    </div>
+                                    <div class="similar_comp_pic ">
+                                        <figure>
+                                            <a href="# " id="ember8428 " class="logo-image-link ember-view ">
+                                                <img class="lazy-image org-company-card__img company-logo-image loaded " alt="Google Logo " src="https://media.licdn.com/mpr/mpr/shrink_400_400/AAEAAQAAAAAAAALTAAAAJGY1NGY1N2ZhLTNmZmUtNGRmZi1iMDgxLTJjZjdkNjNkYmZlOQ.png ">
+                                            </a>
+                                        </figure>
+                                        <dt>Google</dt>
+                                        <dd>Internet</dd>
+                                        <dd>10000+ employees</dd>
+                                    </div>
+                                    <div class="similar_comp_pic ">
+                                        <figure>
+                                            <a href="# " id="ember8428 " class="logo-image-link ember-view ">
+                                                <img class="lazy-image org-company-card__img company-logo-image loaded " alt="Google Logo " src="https://media.licdn.com/mpr/mpr/shrink_400_400/AAEAAQAAAAAAAALTAAAAJGY1NGY1N2ZhLTNmZmUtNGRmZi1iMDgxLTJjZjdkNjNkYmZlOQ.png ">
+                                            </a>
+                                        </figure>
+                                        <dt>Google</dt>
+                                        <dd>Internet</dd>
+                                        <dd>10000+ employees</dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

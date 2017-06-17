@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+    .modal_container {
+        font-family: 'Lato', sans-serif;
+        width: 1100px;
+        height: 90vh;
+        margin: 30px auto;
+        /* position: relative; */
+        background-color: #fff;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border: none;
+        display: block;
+        box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, .15);
+        border-radius: 6px;
+    }
+    
+    .select_container {
+        height: 100%;
+        width: 100%;
+        padding: 30px;
+    }
+    
+    .select_cat .input_search_cat {
+        overflow: hidden;
+        background: #CBCBCB;
+        position: relative;
+        width: 400px;
+        margin: auto;
+        box-shadow: 0 10px 0 -5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .select_cat #input_search {
+        border: 2px solid #797693;
+        border-radius: 0%;
+        position: relative;
+        height: 60px;
+        font-size: 22px;
+        padding: 1em;
+        width: 100%;
+        color: #797693;
+        z-index: 10;
+        background: transparent;
+    }
+    
+    .select_cat .search_input_clicked .input_search_label::before {
+        transform: scale3d(38, 38, 1);
+    }
+    
+    .select_cat .input_search_label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        color: #fff;
+        font-size: 18px;
+    }
+    
+    .select_cat .input_search_label::before {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 50%;
+        left: 20px;
+        z-index: 5;
+        transform: translateY(-50%);
+        background: url(https://tympanus.net/Development/TextInputEffects/img/search.svg) no-repeat center center;
+        background-size: 100%;
+        -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+        transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+    }
+    
+    .select_cat .input_search_cat .input_search_content {
+        position: absolute;
+        top: 50%;
+        left: 70px;
+        transform: translateY(-50%);
+    }
+    
+    .select_container .cat_options {
+        padding: 30px 30px 10px 30px;
+        -webkit-transition: -webkit-transform 0.4s, opacity 0.4s, visibility 0s 0.4s;
+        transition: transform 0.4s, opacity 0.4s, visibility 0s 0.4s;
+        -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+        transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    }
+    
+    .select_container .cat_options li,
+    .select_container .list_selected_cat li {
+        margin-bottom: 15px;
+    }
+    
+    .select_container .cat_card_wrapper,
+    .select_container .cat_selected_wrap {
+        font-size: 12px;
+        width: 310px;
+        z-index: 2000;
+        color: #95948f;
+        position: relative;
+        cursor: pointer;
+        border: 2px solid #95948f;
+        box-shadow: 0 10px 0 -5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .select_container .cat_selected_wrap {
+        width: 249px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis
+    }
+    
+    .select_container .cat_card_wrapper .cat_name,
+    .select_container .cat_selected_wrap .selected_cat {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        padding: 1em 1em 1em 1em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis
+    }
+    
+    .select_container .cat_selected_wrap .selected_cat {
+        width: 200px;
+    }
+    
+    .select_container .cat_card_wrapper .fa,
+    .select_container .cat_selected_wrap .fa {
+        padding: 1.2em;
+        color: #fff;
+        background-color: #95948f;
+        width: 40px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        -webkit-transition: all ease 0.4s;
+        transition: all ease 0.4s;
+    }
+    
+    .select_container .select_seg_div {
+        font-weight: 400;
+        color: #197;
+        font-size: 12px;
+        position: relative;
+        text-transform: uppercase;
+        letter-spacing: 0.275em;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-bottom: 36px;
+        text-align: center;
+    }
+    
+    .select_container .select_seg_div:before {
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: 0;
+        height: 2px;
+        width: 40%;
+        background-color: #95948f;
+    }
+    
+    .select_container .select_seg_div:after {
+        content: '';
+        position: absolute;
+        top: 6px;
+        right: 0;
+        height: 2px;
+        width: 40%;
+        background-color: #95948f;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="modal_container">
+        <div class="select_container">
+            <div class="select_cat">
+                <div class="input_search_cat">
+                    <input type="text" name="input_search_cat" id="input_search">
+                    <label class="input_search_label" for="input_search">
+                        <span class="input_search_content">Search Segment</span>
+                    </label>
+                </div>
+            </div>
+            <div class="cat_options">
+                <ul class="list-inline">
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <span class="cat_name">Automobile, Aerospace, Marine & Defense</span>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <span class="cat_name">Industrial Raw Materials, Machinery & Supply</span>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <span class="cat_name">Industrial Products, Machines & Components</span>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <span class="cat_name">Agriculture, Farming, Agrotech & Food</span>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <span class="cat_name">Medical, Pharma, BioTech & Healthcare</span>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <span class="cat_name">Power, Energy, Renewable Energy</span>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <span class="cat_name">IT / Software, Web, Mobile & Networking</span>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <span class="cat_name">R&D, Consultancy & Industrial Services</span>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <span class="cat_name">Textiles, Fabric, Fashion & Apparels</span>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <span class="cat_name">Chemicals, Metals, Plastics & Polymers</span>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <h3 class="select_seg_div">Selected Segments</h3>
+            <div class="list_selected_cat">
+                <ul class="list-inline">
+                    <li>
+                        <div class="cat_selected_wrap"><span class="selected_cat"> Chemicals, Metals, Plastics & Polymers </span> <i class="fa fa-check"> </i> </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    $(".select_cat .input_search_cat #input_search").focus(function() {
+        if (!$('.select_cat .input_search_cat #input_search').hasClass('search_input_clicked')) {
+            $(".select_cat .input_search_cat").addClass('search_input_clicked');
+        }
+    });
+
+    $(".select_cat .input_search_cat #input_search").blur(function() {
+        if (!$('.select_cat .input_search_cat #input_search').val()) {
+            $(".select_cat .input_search_cat").removeClass('search_input_clicked');
+        }
+    });
+
+
+    var selectedValue, selectedValueList = [],
+        removedValue;
+
+    var addSelectedValue = function() {
+        $(".select_container .list_selected_cat ul").append('<li><div class="cat_selected_wrap"><span class="selected_cat"> ' + selectedValue + ' </span> <i class="fa fa-check"> </i> </div> </li>');
+    }
+
+    var addRemovedValue = function() {
+        $(".select_container .cat_options ul").append('<li><div class="cat_card_wrapper"><span class="cat_name"> ' + removedValue + ' </span> <i class="fa fa-plus"> </i> </div> </li>');
+    }
+
+    var checkRemoved = function() {
+        $(".select_container .cat_options li").each(function(index, el) {
+            $(this).css('display', 'inline-block');
+            if (selectedValueList.indexOf($(this).find('.cat_name').text()) >= 0) {
+                $(this).css('display', 'none');
+            }
+        });
+    }
+
+    var checkSelected = function() {
+
+        $(".select_container .cat_options li").each(function(index, el) {
+            $(this).css('display', 'inline-block');
+            if (selectedValueList.indexOf($(this).find('.cat_name').text()) >= 0) {
+                $(this).css('display', 'none');
+            }
+        });
+    }
+
+    $(".select_container .cat_options li").each(function(index, el) {
+        $(this).on('click', function(event) {
+            selectedValue = $(this).find('.cat_name').text();
+            selectedValueList.push(selectedValue);
+            console.log(selectedValue);
+            console.log(selectedValueList.length);
+            if (selectedValue) {
+                checkSelected();
+                addSelectedValue();
+                selectedValue = "";
+            }
+        });
+    });
+
+    // $(".select_container .list_selected_cat li").each(function(index, el) {
+    //     $(this).hover(function(event) {
+    //         $(this).find('i').toggleClass("fa-check  fa-close");
+    //     });
+
+    //     $(this).on('click', function() {
+    //         removedValue = $(this).find('.selected_cat').text();
+    //         selectedValueList.splice(selectedValueList.indexOf(removedValue), 1)
+    //         console.log(removedValue);
+    //         console.log(selectedValueList);
+    //         checkRemoved();
+    //         if (removedValue) {
+    //             removedValue = "";
+    //         }
+    //     });
+
+    // })
+
+    // $(".select_container .cat_card_wrapper").on('click', function() {
+    // $(".select_container .cat_options").toggleClass('active');
+    // checkSelected();
+    // });
+});
+</script>
+
+</html>

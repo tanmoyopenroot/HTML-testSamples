@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css" media="screen">
+    .component {
+        background-color: #EEEEEE;
+        font-family: 'Lato', sans-serif;
+        padding-bottom: 20px;
+    }
+    
+    .component .news_comp,
+    .component .tender_comp,
+    .component .prof_comp {
+        position: relative;
+        width: 100%;
+        height: 350px;
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 0px;
+        background-color: #fff;
+        transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 30px 25px -20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .component .news_comp .top_layer,
+    .component .tender_comp .top_layer,
+    .component .prof_comp .top_layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 30%;
+        background: #48daa1;
+        /* opacity: 0; */
+    }
+    
+    .component .news_comp .top_layer,
+    .component .tender_comp .top_layer {
+        height: 82px;
+        background: #fff;
+    }
+    
+    .component .tender_comp .top_layer .view_details,
+    .component .news_comp .top_layer .view_details,
+    .component .prof_comp .top_layer .view_details {
+        position: absolute;
+        top: 38%;
+        left: 50%;
+        text-decoration: none;
+        cursor: pointer;
+        transform: translate(-50%, -50%);
+        width: 115px;
+        height: 35px;
+        color: #fff;
+        text-align: center;
+        background: transparent;
+        border: 2px solid #fff;
+        padding: 6px 15px;
+        opacity: 0;
+        transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .component .news_comp .top_layer .view_details,
+    .component .tender_comp .top_layer .view_details {
+        opacity: 1;
+        width: 80%;
+        top: 50%;
+        color: #fff;
+        border: 2px solid #197;
+        background: #197;
+    }
+    
+    .component .prof_comp:hover .top_layer .view_details {
+        opacity: 1;
+    }
+    
+    .component .prof_comp a img {
+        margin-top: 60px;
+        height: 70px;
+        width: 70px;
+        transform: translateX(50%);
+    }
+    
+    .component .prof_comp h3 {
+        font-size: 15px;
+        text-align: center;
+        text-transform: capitalize;
+        font-weight: 700;
+    }
+    
+    .component .prof_comp p {
+        font-size: 0.85em;
+        /* padding: 0.5em 0 0; */
+        color: #9DA8B0;
+    }
+    
+    .component .leads_comp {
+        position: relative;
+        height: 350px;
+        background: white;
+        box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.5);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin: 15px 0;
+        -webkit-transition: all 0.4s ease-in 0.2s;
+        transition: all 0.4s ease-in 0.2s;
+        z-index: 999;
+    }
+    
+    .component .leads_comp .card-img {
+        position: absolute;
+        /* height: 100%; */
+        width: 200px;
+        top: 50%;
+        left: 135px;
+        transform: translateY(-50%);
+    }
+    
+    .component .leads_comp .card-info {
+        -webkit-transition: all 0.6s ease-in 0.2s;
+        transition: all 0.6s ease-in 0.2s;
+        position: absolute;
+        left: 0%;
+        top: 0;
+        bottom: 0;
+        width: 200px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding-left: 25px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    
+    .component .leads_comp .card-info h2 {
+        font-weight: 700;
+    }
+    
+    .component .leads_comp .card-description {
+        -webkit-transition: all 0.5s ease-in 0.1s;
+        transition: all 0.5s ease-in 0.1s;
+        position: absolute;
+        right: 5%;
+        top: 0;
+        bottom: 0;
+        width: 45%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        padding-right: 15px;
+    }
+    
+    .component .tender_comp h3,
+    .component .leads_comp .card-description h3 {
+        margin-top: 0px;
+        font-size: 15px;
+        position: relative;
+        color: #4e5e6a;
+    }
+    
+    .component .tender_comp h3:before,
+    .component .leads_comp .card-description h3:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 0px 0px -7px 0px;
+        height: 2px;
+        width: 30px;
+        background-color: #197;
+    }
+    
+
+    .component .news_comp .news_article p, 
+    .component .leads_comp .card-description p {
+        font-size: 0.85em;
+        padding: 0.5em 0 0;
+        color: #9DA8B0;
+        /* font-weight: bold; */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    .component .leads_comp .leads_go {
+        position: absolute;
+        bottom: -20px;
+        left: 25px;
+        color: #fff;
+        text-align: center;
+        padding: 1em 3em;
+        white-space: nowrap;
+        border-radius: 5px;
+        text-decoration: none;
+        background-color: #197;
+        transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 30px 25px -20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .component .news_comp,
+    .component .tender_comp {
+        box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.5);
+    }
+    
+
+    .component .tender_comp p {
+        font-size: 0.85em;
+        padding: 0.5em 0 0;
+        color: #9DA8B0;
+    }
+
+    .component .news_article .latest_thumb {
+        float: left;
+        margin: 0 15px 0px 0;
+    }
+    
+    .component .news_comp .news_article h3 {
+        margin: 0px;
+        font-size: 12px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: 700;
+        color: #4e5e6a;
+    }
+    
+    .component .news_comp .news_article p {
+    	/* padding: 5px; */
+    }
+
+    .component .news_article .news_time {
+        margin: 0 0 1em;
+        color: #9DA8B0;
+        font-size: 0.925em;
+        font-weight: bold;
+        margin: 0px;
+        padding: 0px;
+        white-space: nowrap;
+    }
+    
+    .component .news_article .news_info {
+        clear: right;
+        font-size: 11px;
+        line-height: 1.5;
+        height: 50px;
+        overflow: hidden;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="component">
+        <div class="container-fluid">
+            <div class="col-md-2" style="padding-right: 0px;">
+                <div class="prof_comp">
+                    <div class="top_layer">
+                        <a class="view_details">
+                        	View Details
+                        </a>
+                    </div>
+                    <div class="comp_info">
+                        <a href="" title="">
+                            <img src="https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2017/05/InfiniteTubesWithThreeJS_Featured-105x105.jpg" alt="" class="img-thumbnail">
+                        </a>
+                        <h3>Company Name</h3>
+                        <p>The Nike Roshe One Print Men's Shoe offers breathability, lightweight cushioning and bold style with an injected unit midsole and colorful mesh upper.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="leads_comp">
+                    <div class="card-img">
+                        <img src="http://www.androidmarket.es/wp-content/uploads/alltext-hd-watch-face-2.png" class="img-responsive">
+                    </div>
+                    <div class="card-info">
+                        <h2 class="name">
+			                	  Business
+			                	  <br>
+			                	  Leads
+			                	</h2>
+                        <p></p>
+                    </div>
+                    <div class="card-description">
+                        <article class="leads_article">
+                            <h3>Hardware and fixtures</h3>
+                            <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+                        </article>
+                        <article class="leads_article">
+                            <h3>Digital Marketing</h3>
+                            <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+                        </article>
+                        <article class="leads_article">
+                            <h3>Hardware and fixtures</h3>
+                            <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+                        </article>
+                        <article class="leads_article">
+                            <h3>Digital Marketing</h3>
+                            <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+                        </article>
+                    </div>
+                    <a href="" title="" class="leads_go">Leads</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="tender_comp">
+                    <div class="top_layer">
+                        <a class="view_details">
+		                    	Goverment & PSU Tenders
+		                    </a>
+                    </div>
+                    <div class="tender_article">
+                        <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+                    </div>
+                    <div class="tender_article">
+                        <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+                    </div>
+                    <div class="tender_article">
+                        <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+                    </div>
+                    <div class="tender_article">
+                        <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <!-- <div class="net_comp"> -->
+                <!-- </div> -->
+                <div class="leads_comp">
+                    <div class="card-img">
+                        <img src="http://www.androidmarket.es/wp-content/uploads/alltext-hd-watch-face-2.png" class="img-responsive">
+                    </div>
+                    <div class="card-info">
+                        <h2 class="name">
+				                	  Business
+				                	  <br>
+				                	  Network
+				                	</h2>
+                        <p></p>
+                    </div>
+                    <div class="card-description">
+                        <article class="leads_article">
+                            <h3>Hardware and fixtures</h3>
+                            <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+                        </article>
+                        <article class="leads_article">
+                            <h3>Digital Marketing</h3>
+                            <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+                        </article>
+                        <article class="leads_article">
+                            <h3>Hardware and fixtures</h3>
+                            <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+                        </article>
+                        <article class="leads_article">
+                            <h3>Digital Marketing</h3>
+                            <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+                        </article>
+                    </div>
+                    <a href="" title="" class="leads_go">Network</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="news_comp">
+                    <div class="top_layer">
+                        <a class="view_details">
+            		                    	News Related To SME's
+            		                    </a>
+                    </div>
+                    <article class="news_article">
+                        <div class="latest_thumb">
+                            <img width="60" height="60" src="http://img.etimg.com/photo/57787703.cms">
+                        </div>
+                        <h3>Planning for the future: How predictive business analytics can be a game changer for SMEs</h3>
+                        <p class="news_time">
+                            <time pubdate="pubdate">May 20, 2017</time>
+                        </p>
+                        <p class="news_info">
+                            Workbox Tinyreset Craft Prototype Delaunator Word Counter
+                        </p>
+                    </article>
+                    <article class="news_article">
+                        <div class="latest_thumb">
+                            <img width="60" height="60" src="http://img.etimg.com/photo/57787703.cms">
+                        </div>
+                        <h3>Planning for the future: How predictive business analytics can be a game changer for SMEs</h3>
+                        <p class="news_time">
+                            <time pubdate="pubdate">May 20, 2017</time>
+                        </p>
+                        <p class="news_info">
+                            Workbox Tinyreset Craft Prototype Delaunator Word Counter
+                        </p>
+                    </article>
+                    <article class="news_article">
+                        <div class="latest_thumb">
+                            <img width="60" height="60" src="http://img.etimg.com/photo/57787703.cms">
+                        </div>
+                        <h3>Planning for the future: How predictive business analytics can be a game changer for SMEs</h3>
+                        <p class="news_time">
+                            <time pubdate="pubdate">May 20, 2017</time>
+                        </p>
+                        <p class="news_info">
+                            Workbox Tinyreset Craft Prototype Delaunator Word Counter
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

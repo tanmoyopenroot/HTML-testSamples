@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <title>Company Card Share</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+    .col-md-6 {
+        height: 280px;
+        padding: 5px;
+        box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, .15);
+        /* border: 1px solid #fff; */
+        position: relative;
+        background: #62BFF5;
+    }
+    
+    .fab,
+    .share {
+        height: 56px;
+        width: 56px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        cursor: pointer;
+        box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, .15);
+        background-color: #fff;
+        z-index: 5;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+        transition-delay: 0.15s
+    }
+    
+    .fab {
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: all 0.2s;
+        transition: all 0.2s;
+    }
+    
+    .fab:nth-child(1) {
+        background: #1DA1F2 url(https://cbwconline.com/IMG/Codepen/Twitter.svg) center/28px no-repeat;
+        top: 0px;
+        left: 120px;
+    }
+    
+    .fab:nth-child(2) {
+        background: #46629E url(https://cbwconline.com/IMG/Codepen/Facebook.svg) center/28px no-repeat;
+        top: 0px;
+        left: 200px;
+    }
+    
+    .fab:nth-child(3) {
+        background: #DB4437 url(https://cbwconline.com/IMG/Codepen/Google.svg) center/28px no-repeat;
+        top: 0px;
+        left: 280px;
+    }
+
+    .fab:nth-child(4) {
+        background: #DB4437 url(https://cbwconline.com/IMG/Codepen/Google.svg) center/28px no-repeat;
+        top: 0px;
+        left: 360px;
+    }
+    
+    .share.active {
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+        bottom: 0px;
+        left: 0px;
+    }
+    
+    .share.active .fab {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .share.active .fab:nth-child(1) {
+        top: 100px;
+        transition-delay: 0.15s
+    }
+    
+    .share.active .fab:nth-child(2) {
+        top: 100px;
+        transition-delay: 0.25s
+    }
+    
+    .share.active .fab:nth-child(3) {
+        top: 100px;
+        transition-delay: 0.3s
+    }
+
+    .share.active .fab:nth-child(4) {
+        top: 100px;
+        transition-delay: 0.35s
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="share">
+                    <div class="fab no"></div>
+                    <div class="fab no"></div>
+                    <div class="fab no"></div>
+                    <div class="fab no"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="share">
+                    <div class="fab no"></div>
+                    <div class="fab no"></div>
+                    <div class="fab no"></div>
+                    <div class="fab no"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    window.onload = function() {
+        $(".share").on('click', function(event) {
+            $(this).toggleClass('active');
+        });
+    }
+    </script>
+</body>
+
+</html>

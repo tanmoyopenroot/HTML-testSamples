@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style type="text/css" media="screen">
+  .main_page {
+    font-family: 'Lato', sans-serif;
+    background: #fafbfc!important;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .main_page .search {
+    margin-bottom: 50px
+  }
+  
+  .main_page .search .form-group {
+    width: 50%;
+    margin: auto;
+    position: relative;
+  }
+  
+  .main_page .search #comp_search {
+    border: 1px solid #197;
+    border-radius: 0px;
+    outline: none;
+    background: #fff;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    z-index: 10;
+    padding: 20px 65px 20px 20px;
+    font-family: inherit;
+    font-size: 15px;
+    color: #197;
+    /* font-weight: 700; */
+    box-shadow: 0 0 0px rgba(0, 0, 0, .12), 0 0px 0px rgba(0, 0, 0, .24);
+  }
+  
+  .main_page .search .fa {
+    padding: 15px;
+    background: #197;
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .main_page .components .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1% 5%;
+  }
+  
+  .main_page .components .service_comp,
+  .main_page .components .company_comp,
+  .main_page .components .product_comp,
+  .main_page .components .leads_comp,
+  .main_page .components .tenders_comp,
+  .main_page .components .net_news_comp,
+  .main_page .components .dashboard_comp {
+    padding: 20px 20px 15px;
+    width: 400px;
+    height: 200px;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 2px 4px 8px 0 rgba(46, 61, 73, .2);
+    background-color: #fff;
+    margin-bottom: 30px;
+  }
+  
+  .main_page .components .tenders_comp:before,
+  .main_page .components .leads_comp:before,
+  .main_page .components .dashboard_comp:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #197;
+    width: 17%;
+  }
+  
+  .main_page .tenders_comp .comp_title,
+  .main_page .leads_comp .comp_title,
+  .main_page .dashboard_comp .comp_title {
+    position: absolute;
+    color: #fff;
+    transform: rotate(-90deg);
+    bottom: 30%;
+    left: 1%;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  
+  .main_page .dashboard_comp .dash_logo {
+    position: absolute;
+    top: 13px;
+    left: 8%;
+  }
+  
+  .main_page .components .company_comp .img-circle,
+  .main_page .dash_logo .img-circle {
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 3px;
+  }
+  
+  .main_page .dashboard_comp .dash_head_dots {
+    position: absolute;
+    color: #197;
+    left: 120px;
+    top: 33px;
+    width: 0px;
+    height: 19px;
+    border-left: 2px dotted;
+  }
+  
+  .main_page .dashboard_comp .dash_head_dots:after,
+  .main_page .dashboard_comp .dash_head_dots:before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid;
+    border-color: inherit;
+  }
+  
+  .main_page .dashboard_comp .dash_head_dots:before {
+    top: -10px;
+  }
+  
+  .main_page .dashboard_comp .dash_head_dots:after {
+    top: 22px;
+  }
+  
+  .main_page .dashboard_comp .dash_head {
+    position: absolute;
+    right: 55px;
+    top: 20px;
+    width: 210px;
+  }
+  
+  .main_page .components .service_comp h3,
+  .main_page .components .product_comp h3,
+  .main_page .components .company_comp h3,
+  .main_page .net_news_comp .net_comp h3,
+  .main_page .dashboard_comp .dash_head h3 {
+    margin: 0px 0px 9px;
+    font-weight: 700;
+    margin-top: 0px;
+    font-size: 13px;
+    position: relative;
+    color: #4e5e6a;
+  }
+  
+  .main_page .components .service_comp p,
+  .main_page .components .product_comp p,
+  .main_page .components .company_comp p,
+  .main_page .net_news_comp .net_comp span,
+  .main_page .dashboard_comp .dash_head p {
+    font-size: 0.85em;
+    padding: 0.5em 0 0;
+    color: #9DA8B0;
+    /* font-weight: bold; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 90%;
+  }
+  
+  .main_page .dashboard_comp .dash_head:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 22px;
+    width: 100%;
+    height: 1px;
+    background: #ECECEC;
+  }
+  
+  .main_page .dashboard_comp .dash_progress {
+    position: absolute;
+    top: 74px;
+    right: 35px;
+    z-index: 10;
+    width: 245px;
+  }
+  
+  .main_page .dashboard_comp .progress-color {
+    background-color: #197;
+  }
+  
+  .main_page .dash_progress .progress {
+    border-radius: 0px;
+  }
+  
+  .main_page .dashboard_comp .dash_tags {
+    position: absolute;
+    bottom: 0px;
+    left: 135px;
+  }
+  
+  .main_page .dashboard_comp .dash_tags li {
+    margin: 3px 0px;
+    color: #197;
+  }
+  
+  .main_page .dashboard_comp .dash_tags li:before {
+    content: "";
+    position: absolute;
+    left: -19px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid;
+    border-color: inherit;
+    margin-top: 7px;
+  }
+  
+  .main_page .components .news_comp .tag,
+  .main_page .dashboard_comp .dash_tags .tag {
+    font-size: 10px;
+    text-transform: capitalize;
+    color: #9DA8B0;
+  }
+  
+  .main_page .components .net_news_comp {
+    width: calc(100% - 440px);
+    margin-left: 40px;
+  }
+  
+  .main_page .net_news_comp .divider {
+    position: absolute;
+    left: 38%;
+    top: 10px;
+    width: 1px;
+    height: calc(100% - 20px);
+    background: #ECECEC;
+  }
+  
+  .main_page .components .net_comp {
+    position: absolute;
+    width: 31%;
+  }
+  
+  .main_page .components .net_comp .fa {
+    position: absolute;
+    top: 0px;
+    left: 35%;
+    padding: 20px;
+    background: #197;
+    color: #fff;
+    border-radius: 50%;
+  }
+  
+  .main_page .net_comp .net_num {
+    position: absolute;
+    top: 50px;
+    font-size: 50px;
+    color: #9DA8B0;
+  }
+  
+  .main_page .net_comp .net_num span {
+    font-size: 12px;
+  }
+  
+  .main_page .components .net_comp hr {
+    margin-top: 120px;
+    margin-bottom: 10px;
+  }
+  
+  .main_page .net_news_comp .net_comp h3 {
+    text-align: center;
+  }
+  
+  .main_page .components .news_comp {
+    width: 45%;
+    position: absolute;
+    top: 20px;
+    left: 46%;
+  }
+  
+  .main_page .news_comp li:before {
+    color: #197;
+    content: "";
+    position: absolute;
+    left: -19px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 2px solid;
+    border-color: inherit;
+    margin-top: 4px;
+  }
+  
+  .main_page .news_comp li:after {
+    color: #197;
+    content: "";
+    width: 0px;
+    height: 9px;
+    border-left: 2px dotted;
+    position: absolute;
+    left: -16px;
+    margin-top: -8px;
+  }
+  
+  .main_page .news_comp li:last-child:after {
+    display: none;
+  }
+  
+  .main_page .news_comp li p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .main_page .net_news_comp .comp_title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 28px;
+    background-color: #197;
+  }
+  
+  .main_page .net_news_comp .comp_title h3 {
+    position: absolute;
+    color: #fff;
+    transform: rotate(90deg);
+    bottom: 40%;
+    right: -20%;
+    font-size: 15px;
+  }
+  
+  .main_page .components .leads_comp {
+    width: 49%;
+    height: 220px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .main_page .components .tenders_comp:before,
+  .main_page .components .leads_comp:before {
+    width: 13%;
+  }
+  
+  .main_page .components .component-info {
+    -webkit-transition: all 0.6s ease-in 0.2s;
+    transition: all 0.6s ease-in 0.2s;
+    width: 160px;
+    height: 100%;
+  }
+  
+  .main_page .components .component-desc {
+    -webkit-transition: all 0.6s ease-in 0.2s;
+    transition: all 0.6s ease-in 0.2s;
+    width: 77%;
+    /* height: 100%; */
+    position: absolute;
+    top: 20px;
+    left: 23%;
+  }
+  
+  .main_page .tenders_comp .component-desc h3,
+  .main_page .leads_comp .component-desc h3 {
+    margin-top: 0px;
+    font-size: 15px;
+    position: relative;
+    color: #4e5e6a;
+  }
+  
+  .main_page .tenders_comp .component-desc h3:before,
+  .main_page .leads_comp .component-desc h3:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0px 0px -7px 0px;
+    height: 2px;
+    width: 30px;
+    background-color: #197;
+  }
+  
+  .main_page .tenders_comp .component-desc p,
+  .main_page .leads_comp .component-desc p {
+    font-size: 0.85em;
+    padding: 0.5em 0 0;
+    color: #9DA8B0;
+    /* font-weight: bold; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 90%;
+  }
+  
+  .main_page .components .tenders_comp {
+    width: 49%;
+    margin-left: 2%;
+    height: 220px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .main_page .components .product_comp {
+    margin-top: 30px;
+    padding-top: 37px;
+    width: 32%;
+  }
+  
+  .main_page .components .service_comp img,
+  .main_page .product_comp img {
+    float: left;
+    margin-right: 20px;
+    margin-top: -6px;
+  }
+  
+  .main_page .components .service_comp {
+    margin-top: 30px;
+    padding-top: 37px;
+    width: 32%;
+    margin-left: 2%;
+  }
+  
+  .main_page .components .company_comp {
+    width: 32%;
+    margin-left: 2%;
+    margin-top: 30px;
+    padding-top: 37px;
+  }
+  
+  .main_page .tenders_comp .comp_title,
+  .main_page .leads_comp .comp_title {
+    left: inherit;
+  }
+  
+  .main_page .components .leads_comp .fa,
+  .main_page .components .tenders_comp .fa,
+  .main_page .components .service_comp .fa,
+  .main_page .components .product_comp .fa,
+  .main_page .components .company_comp .fa {
+    position: absolute;
+    height: 5.25rem;
+    /* position: relative; */
+    padding: 20px;
+    border-radius: 50%;
+    top: -3rem;
+    left: 50%;
+    width: 5.25rem;
+    box-shadow: 2px 4px 8px 0 rgba(46, 61, 73, .2);
+    /* margin: auto; */
+    background-color: #197;
+    transform: translateX(-50%);
+    color: #fff;
+  }
+  
+  .main_page .components .leads_comp .fa,
+  .main_page .components .tenders_comp .fa {
+    top: 20px;
+    left: 13%;
+    color: #197;
+    background-color: #fff;
+  }
+  
+  .main_page .components .service_comp .fa,
+  .main_page .components .product_comp .fa {
+    font-size: 17px;
+    padding: 17px;
+  }
+  
+  .main_page .components .company_comp img {
+    float: left;
+    margin-right: 20px;
+    margin-top: -13px;
+  }
+  
+  .main_page .components .service_comp h3,
+  .main_page .components .product_comp h3,
+  .main_page .components .company_comp h3 {
+    margin: 0;
+  }
+  
+  .main_page .components .product_comp p,
+  .main_page .components .service_comp p,
+  .main_page .components .company_comp p {
+    width: 70%;
+    /* padding: 0px; */
+  }
+  
+  .main_page .components .service_comp,
+  .main_page .components .company_comp,
+  .main_page .components .product_comp {
+    height: 250px;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="main_page">
+    <div class="search">
+      <div class="container">
+        <form>
+          <div class="form-group">
+            <input type="email" class="form-control" id="comp_search" placeholder="Search For Leads, Network, News ...">
+            <i class="fa fa-search"></i>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="components">
+      <div class="container">
+        <div class="dashboard_comp">
+          <div class="comp_title">
+            Dashboard
+          </div>
+          <div class="dash_logo">
+            <img width="65" height="65" src="http://img.etimg.com/photo/57787703.cms" class="img-circle">
+          </div>
+          <div class="dash_head_dots">
+          </div>
+          <div class="dash_head">
+            <h3>Company Name</h3>
+            <p>W 90th St New York, NY 1002</p>
+          </div>
+          <div class="dash_progress">
+            <div class="progress">
+              <div class="progress-bar progress-color progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                <span class="sr-only">40% Complete (success)</span>
+              </div>
+            </div>
+          </div>
+          <div class="dash_tags">
+            <ul class="list-unstyled">
+              <li><a href="" title="" class="tag">Automobile, Aerospace, Marine & Defense</a></li>
+              <li><a href="" title="" class="tag">Automobile, Aerospace, Marine & Defense</a></li>
+              <li><a href="" title="" class="tag">Automobile, Aerospace, Marine & Defense</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="net_news_comp">
+          <div class="net_comp">
+            <i class="fa fa-group"></i>
+            <div class="net_num">
+              10
+              <span>Thousan And More...</span>
+            </div>
+            <hr>
+            <h3>Connect</h3>
+          </div>
+          <div class="divider"></div>
+          <div class="news_comp">
+            <ul class="list-unstyled">
+              <li>
+                <a href="" title="" class="tag">
+                  <p>Planning for the future: How predictive business analytics can be a game changer for SMEs</p>
+                </a>
+              </li>
+              <li>
+                <a href="" title="" class="tag">
+                  <p>Planning for the future: How predictive business analytics can be a game changer for SMEs</p>
+                </a>
+              </li>
+              <li>
+                <a href="" title="" class="tag">
+                  <p>Planning for the future: How predictive business analytics can be a game changer for SMEs</p>
+                </a>
+              </li>
+              <li>
+                <a href="" title="" class="tag">
+                  <p>Planning for the future: How predictive business analytics can be a game changer for SMEs</p>
+                </a>
+              </li>
+              <li>
+                <a href="" title="" class="tag">
+                  <p>Planning for the future: How predictive business analytics can be a game changer for SMEs</p>
+                </a>
+              </li>
+              <li>
+                <a href="" title="" class="tag">
+                  <p>Planning for the future: How predictive business analytics can be a game changer for SMEs</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="comp_title">
+            <h3>News</h3>
+          </div>
+        </div>
+        <div class="leads_comp">
+          <!--           <div class="component-info">
+            <h3>                          
+              Business
+              <br>
+              Leads
+            </h3>
+          </div>
+          <a href="" title="">Take a look</a> -->
+          <div class="comp_title">
+            Leads
+          </div>
+          <i class="fa fa-gears"></i>
+          <div class="component-desc">
+            <article class="leads-article">
+              <h3>Hardware and fixtures</h3>
+              <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+            </article>
+            <article class="leads-article">
+              <h3>Digital Marketing</h3>
+              <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+            </article>
+            <article class="leads-article">
+              <h3>Hardware and fixtures</h3>
+              <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+            </article>
+          </div>
+        </div>
+        <div class="tenders_comp">
+          <div class="comp_title">
+            Tenders
+          </div>
+          <i class="fa fa-gears"></i>
+          <div class="component-desc">
+            <article class="leads-article">
+              <h3>Hardware and fixtures</h3>
+              <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+            </article>
+            <article class="leads-article">
+              <h3>Digital Marketing</h3>
+              <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+            </article>
+            <article class="leads-article">
+              <h3>Hardware and fixtures</h3>
+              <p>Manchester Arena terror attack: UK woke up to a horrific Tuesday with 22 people killed after a suicide bomber blew himself up</p>
+            </article>
+          </div>
+        </div>
+        <div class="product_comp">
+          <i class="fa fa-cubes"></i>
+          <div class="prod_comp_article">
+            <img width="45" height="45" src="http://img.etimg.com/photo/57787703.cms">
+            <h3>Product A</h3>
+            <p class="prod_comp_info">
+              Workbox Tinyreset Craft Prototype Delaunator Word Counter
+            </p>
+          </div>
+          <hr>
+          <div class="prod_comp_article">
+            <img width="45" height="45" src="http://img.etimg.com/photo/57787703.cms">
+            <h3>Product A</h3>
+            <p class="prod_comp_info">
+              Workbox Tinyreset Craft Prototype Delaunator Word Counter
+            </p>
+          </div>
+          <hr>
+          <div class="prod_comp_article">
+            <img width="45" height="45" src="http://img.etimg.com/photo/57787703.cms">
+            <h3>Product A</h3>
+            <p class="prod_comp_info">
+              Workbox Tinyreset Craft Prototype Delaunator Word Counter
+            </p>
+          </div>
+        </div>
+        <div class="service_comp">
+          <i class="fa fa-gears"></i>
+          <div class="service_comp_article">
+            <img width="45" height="45" src="http://img.etimg.com/photo/57787703.cms">
+            <h3>Product A</h3>
+            <p class="service_comp_info">
+              Workbox Tinyreset Craft Prototype Delaunator Word Counter
+            </p>
+          </div>
+          <hr>
+          <div class="service_comp_article">
+            <img width="45" height="45" src="http://img.etimg.com/photo/57787703.cms">
+            <h3>Product A</h3>
+            <p class="service_comp_info">
+              Workbox Tinyreset Craft Prototype Delaunator Word Counter
+            </p>
+          </div>
+          <hr>
+          <div class="service_comp_article">
+            <img width="45" height="45" src="http://img.etimg.com/photo/57787703.cms">
+            <h3>Product A</h3>
+            <p class="service_comp_info">
+              Workbox Tinyreset Craft Prototype Delaunator Word Counter
+            </p>
+          </div>
+        </div>
+        <div class="company_comp">
+          <i class="fa fa-industry"></i>
+          <div class="comp_comp_cont">
+            <img width="55" height="55" src="http://img.etimg.com/photo/57787703.cms" class="img-circle">
+            <h3>Company ABC</h3>
+            <p class="comp_info">
+              Workbox Tinyreset Craft Prototype Delaunator Word Counter
+            </p>
+          </div>
+          <hr>
+          <div class="comp_comp_cont">
+            <img width="55" height="55" src="http://img.etimg.com/photo/57787703.cms" class="img-circle">
+            <h3>Company ABC</h3>
+            <p class="comp_info">
+              Workbox Tinyreset Craft Prototype Delaunator Word Counter
+            </p>
+          </div>
+          <hr>
+          <div class="comp_comp_cont">
+            <img width="55" height="55" src="http://img.etimg.com/photo/57787703.cms" class="img-circle">
+            <h3>Company ABC</h3>
+            <p class="comp_info">
+              Workbox Tinyreset Craft Prototype Delaunator Word Counter
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

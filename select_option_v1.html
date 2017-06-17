@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+    .modal_container {
+        font-family: 'Lato', sans-serif;
+        width: 1100px;
+        height: 90vh;
+        margin: 30px auto;
+        /* position: relative; */
+        background-color: #fff;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border: none;
+        display: block;
+        box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, .15);
+        border-radius: 6px;
+    }
+    
+    .select_container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        padding: 30px;
+    }
+    
+    .select_container #select_cat li {
+        margin-bottom: 15px;
+    }
+    
+    .select_container .cat_select_btn {
+        font-size: 1em;
+        max-width: 300px;
+        font-weight: 700;
+        z-index: 2000;
+        color: #95948f;
+        display: flex;
+        cursor: pointer;
+        border: 2px solid #95948f;
+        box-shadow: 0 10px 0 -5px rgba(0, 0, 0, 0.1);
+    }
+    /*     .select_container .cat_select_btn .cat_overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #fff;
+        opacity: 0;
+        -webkit-transition: all ease 0.4s;
+        transition: all ease 0.4s;
+    }
+    
+    .select_container .cat_select_btn:hover .cat_overlay {
+        opacity: 1;
+    }
+    
+    .select_container .cat_select_btn .cat_overlay h5 {
+        position: absolute;
+        top: 28%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #95948f;
+        font-size: 1em;
+        font-weight: 700;
+    } */
+    
+    .cat_select_btn .selected_cat {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        padding: 1em 1em 1em 1em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis
+    }
+    
+    .cat_select_btn .fa {
+        padding: 1.2em 30px 1.2em 0px;
+    }
+    
+    .select_container .cat_options {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        padding: 30px;
+        opacity: 0;
+        visibility: hidden;
+        background: #fff;
+        -webkit-transform: perspective(1000px) translate3d(0, 0, -200px);
+        transform: perspective(1000px) translate3d(0, 0, -200px);
+        -webkit-transition: -webkit-transform 0.4s, opacity 0.4s, visibility 0s 0.4s;
+        transition: transform 0.4s, opacity 0.4s, visibility 0s 0.4s;
+        -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+        transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    }
+    
+    .select_container .cat_options.active {
+        opacity: 1;
+        visibility: visible;
+        -webkit-transform: perspective(1000px) translate3d(0, 0, 0px);
+        transform: perspective(1000px) translate3d(0, 0, 0px);
+        -webkit-transition: opacity 0.4s, -webkit-transform 0.4s;
+        transition: opacity 0.4s, transform 0.4s;
+    }
+    
+    .select_container .cat_options .list-inline {
+        /* text-align: center; */
+    }
+    
+    .select_container .cat_options .cat_card_wrapper {
+        height: 50px;
+        width: 300px;
+        opacity: 0;
+        position: relative;
+        padding: 7px 25px;
+        margin-bottom: 15px;
+        background-color: #fff;
+        transition: 0.5s;
+        box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.5);
+        border-radius: 3px;
+        overflow: hidden;
+        cursor: pointer;
+        -webkit-transform: translate3d(0, 1em, 0);
+        transform: translate3d(0, 1em, 0);
+        -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+        transition: transform 0.3s, opacity 0.3s;
+        -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+        transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+        /* -webkit-transition-delay: 0.5s; */
+        /* transition-delay: 0.5s; */
+    }
+    
+    .select_container .cat_options.active .cat_card_wrapper {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        transition-delay: 0.5s;
+    }
+    
+    .select_container .cat_options .cat_card_wrapper:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 5px;
+        background-color: #197;
+    }
+    
+    .select_container .cat_card_wrapper .cat_overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #197;
+        z-index: 10;
+        opacity: 0;
+        -webkit-transition: all ease 0.4s;
+        transition: all ease 0.4s;
+    }
+    
+    .select_container .cat_card_wrapper:hover .cat_overlay {
+        opacity: 1;
+    }
+    
+    .select_container .cat_card_wrapper .cat_overlay h5 {
+        position: absolute;
+        top: 28%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+    }
+    
+    .select_container .cat_card_wrapper .cat_name {
+        text-align: left;
+        font-size: 13px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="modal_container">
+        <div class="select_container">
+            <div>
+                <ul class="list-inline" id="select_cat">
+                    <!--                     <li>
+                        <div class="cat_select_btn">
+                            <span class="selected_cat">Industrial Raw Materials, Machinery and Supply</span>
+                            <i class="fa fa-bullhorn"></i>
+                        </div>
+                    </li> -->
+                    <li>
+                        <div class="cat_select_btn add_more_seg">
+                            <span class="selected_cat">Add More Segment</span>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="cat_options">
+                <ul class="list-inline">
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <div class="cat_overlay">
+                                <h5>Add This Segment</h5>
+                            </div>
+                            <span class="cat_name">Automobile, Aerospace, Marine & Defense</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <div class="cat_overlay">
+                                <h5>Add This Segment</h5>
+                            </div>
+                            <span class="cat_name">Industrial Raw Materials, Machinery & Supply</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <div class="cat_overlay">
+                                <h5>Add This Segment</h5>
+                            </div>
+                            <span class="cat_name">Industrial Products, Machines & Components</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <div class="cat_overlay">
+                                <h5>Add This Segment</h5>
+                            </div>
+                            <span class="cat_name">Agriculture, Farming, Agrotech & Food</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <div class="cat_overlay">
+                                <h5>Add This Segment</h5>
+                            </div>
+                            <span class="cat_name">Medical, Pharma, BioTech & Healthcare</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <div class="cat_overlay">
+                                <h5>Add This Segment</h5>
+                            </div>
+                            <span class="cat_name">Power, Energy, Renewable Energy</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <div class="cat_overlay">
+                                <h5>Add This Segment</h5>
+                            </div>
+                            <span class="cat_name">IT / Software, Web, Mobile & Networking</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <div class="cat_overlay">
+                                <h5>Add This Segment</h5>
+                            </div>
+                            <span class="cat_name">R&D, Consultancy & Industrial Services</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <div class="cat_overlay">
+                                <h5>Add This Segment</h5>
+                            </div>
+                            <span class="cat_name">Textiles, Fabric, Fashion & Apparels</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <div class="cat_overlay">
+                                <h5>Add This Segment</h5>
+                            </div>
+                            <span class="cat_name">Handicraft, Decoratives, Gifts & Toys</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cat_card_wrapper">
+                            <div class="cat_overlay">
+                                <h5>Add This Segment</h5>
+                            </div>
+                            <span class="cat_name">Chemicals, Metals, Plastics & Polymers</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    var selectedValue, selectedValueList = [];
+
+    var addSelectedValue = function() {
+        $(".select_container #select_cat").prepend('<li> <div class="cat_select_btn"> <span class="selected_cat">' + selectedValue + '</span> <i class = "fa fa-bullhorn"> </i> </div> </li>')
+
+    }
+
+    var checkSelected = function() {
+    	$(this).css('display', 'block');
+    	$(".select_container .cat_options li").each(function(index, el) {
+    		if(selectedValueList.indexOf($(this).find('.cat_name').text()) >= 0) {
+    			$(this).css('display', 'none');
+    		}
+    	});
+    }
+
+    $(".select_container .cat_options li").each(function(index, el) {
+        $(this).on('click', function() {
+            selectedValue = $(this).find('.cat_name').text();
+            selectedValueList.push(selectedValue);
+            console.log(selectedValue);
+            console.log(selectedValueList.length);
+            if (selectedValue) {
+                addSelectedValue();
+                selectedValue = "";
+            }
+        });
+    });
+
+    $(".select_container .cat_select_btn.add_more_seg").on('click', function() {
+    		checkSelected();
+        $(".select_container .cat_options").toggleClass('active');
+    });
+
+    $(".select_container .cat_card_wrapper").on('click', function() {
+        $(".select_container .cat_options").toggleClass('active');
+    });
+});
+</script>
+
+</html>
